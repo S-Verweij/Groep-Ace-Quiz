@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100;
+    margin: 0;
+    background-image: url('/Groep\ Ace\ Quiz\ Project/img/website-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header {
+    background-color: #666;
+    border-bottom: 5px solid black;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    /* schermhoogte - headerhoogte */
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Dit maakt 2 kolommen */
+    gap: 20px;
+    /*ruimte tussen cards*/
+    justify-content: center;
+    /*Horizontaal in het midden. Kan aangepast worden*/
+}
+
+.card {
+    display: block;
+    background: #f0f0f0;
+    padding: 20px;
+    border: 3px solid black;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    /*Dit past aan hoe de card eruit ziet als je met je muis erover gaat*/
+    transform: scale(1.05);
+    background: #e0e0e0;
+}
+
+.card-titel {
+    margin: 5px;
+    text-align: center;
+}
+
+.image-text {
+    text-decoration: underline;
+    font-weight: bold;
+    margin: 5px;
+    text-align: center;
+}
+
+.image-quiz {
+    border-radius: 10px;
+    border: 3px solid black;
+}
+
+.author {
+    background-color: lightblue;
+    border: 2px solid rgb(89, 175, 203);
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+
+}
+
+.music-control {
+  position: fixed;   /* Blijft op dezelfde plek bij scrollen. Is fijner */
+  top: 20px;        
+  left: 20px;      
+  z-index: 1000;     /* zorgt dat de knop boven andere elementen ligt */  
+}
+
+/* Muziekknop linksboven */
+.music-control button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px;
+  width: 130px; /* vaste breedte */
+  background-color: #007bff;
+  color: white;
+  border: solid 4px black;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  justify-content: center;
+}
+
+.music-control button:hover {
+  background-color: #0056b3;
+}
+
+.sound-icon {
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+}
+
+footer {
+    background-color: #666;
+    border-top: 5px solid black;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+ }
+}

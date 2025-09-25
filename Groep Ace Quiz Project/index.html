@@ -1,12 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Groep Ace | Project Quiz</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+    <header>
+        <h1>Welkom bij Quizzyy!</h1>
+    </header>
+    <br>
+    <br>
+    <!-- Muziek Knop -->
+    <aside class="music-control">
+        <button id="toggle-music">
+            <img class="sound-icon" src="img/sound-icon.png" alt="muziek aan/uit">
+            <span class="text-stop">Stop muziek</span>
+            <span class="text-play" style="display:none;">Speel muziek</span>
+        </button>
+    </aside>
+    <!-- De Cards met onze categorieen -->
+    <main class="cards-container">
+        <div class="grid">
+            <a href="/Groep Ace Quiz Project/HTML/zoology.html" class="card">
+                <div class="card-titel">
+                    <h1>Zoology</h1>
+                </div>
+                <img class="image-quiz" src="img/zoology-image.png" width="475" height="500" alt="zoology-image">
+                <div class="image-text">Hoeveel weet jij van dieren?</div>
+                <div class="author">
+                    <b>Idee door:</b> <em>Will-Clair Finisie</em>
+                </div>
+            </a>
+            <a href="/Groep Ace Quiz Project/HTML/auto's.html" class="card">
+                <div class="card-titel">
+                    <h1>Auto Kennis</h1>
+                </div>
+                <img class="image-quiz" src="img/auto's-image.jpg" width="475" height="500" alt="auto-image">
+                <div class="image-text">Hoeveel weet jij van auto's?</div>
+                <div class="author">
+                    <b>Idee door:</b> <em>Suriyo Verweij</em>
+                </div>
+            </a>
+            <a href="/Groep Ace Quiz Project/HTML/geschiedenis.html" class="card">
+                <div class="card-titel">
+                    <h1>Geschiedenis</h1>
+                </div>
+                <img class="image-quiz" src="img/geschiedenis-image.jpg" width="475" height="500"
+                    alt="geschiedenis-image">
+                <div class="image-text">Hoeveel weet jij van onze geschiedenis?</div>
+                <div class="author">
+                    <b>Idee door:</b> <em>Luka Jalžabetić</em>
+                </div>
+            </a>
+            <a href="/Groep Ace Quiz Project/HTML/topografie.html" class="card">
+                <div class="card-titel">
+                    <h1>Topografie</h1>
+                </div>
+                <img class="image-quiz" src="img/topografie-image.jpg" width="475" height="500" alt="topografie-image">
+                <div class="image-text">Hoeveel weet jij van onze topografie?</div>
+                <div class="author">
+                    <b>Idee door:</b> <em>Wendell Long</em>
+                </div>
+            </a>
+        </div>
+    </main>
+    <br>
+    <br>
+    <!-- Achtergrond Muziek -->
+    <audio id="bg-music" loop autoplay>
+        <source src="/Groep Ace Quiz Project/audio/Kahoot Lobby Music.mp3" type="audio/mpeg">
+    </audio>
+    <!-- Footer -->
+    <footer>
+        <h1>Naam van speler:</h1>
+    </footer>
     <script src="javascript/script.js"></script>
 </body>
+
 </html>
