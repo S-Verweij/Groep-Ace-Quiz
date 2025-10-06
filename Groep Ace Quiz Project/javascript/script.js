@@ -1,8 +1,12 @@
+
 //----------------------- \\
-// --Muziek Knop en Data-- \\
+// --Muziek en Reset Knop en Data-- \\
 //------------------------ \\
 const music = document.getElementById('bg-music');
 const toggleBtn = document.getElementById('toggle-music');
+const resetBtn = document.getElementById('reset-button');
+
+
 
 music.volume = 0.2; // zachter volume
 
@@ -37,7 +41,7 @@ const vragen = {
     { vraag: "Wie wordt gezien als de uitvinder van de Wankelmotor?", opties: ["Karl Wankel", "Hans Wankel", "Walter Wankel", "Felix Wankel"], antwoord: 3 },
     { vraag: "Welke fabrikant introduceerde in 1954 de eerste productieauto met brandstofinjectie?", opties: ["Porsche", "Mercedes-Benz", "CHevrolet", "BMW"], antwoord: 1 },
     { vraag: "De Bugatti Veyron brak snelheidsrecords. Welke motor lag erin?", opties: ["V10", "W12", "W16", "V18"], antwoord: 2 },
-    { vraag: "Wat was de allereerste ‘auto’ die op de maan reed (Lunar Roving Vehicle, 1971)?", opties: ["General Motors", "Ford", "NASA zelf", "Chrysler"], antwoord: 0 },
+    { vraag: "Wat was de allereerste \"auto\" die op de maan reed (Lunar Roving Vehicle, 1971)?", opties: ["General Motors", "Ford", "NASA zelf", "Chrysler"], antwoord: 0 },
     { vraag: "Welke van deze automerken is oorspronkelijk Japans?", opties: ["Hyundai", "Mitsubishi", "Kia", "Geely"], antwoord: 1 },
     { vraag: "Welke band werd in 1946 voor het eerst geïntroduceerd door Michelin en betekende een revolutie in de auto-industrie?", opties: ["Winterband", "Radiaalband", "Runflatband", "Slickband"], antwoord: 1 },
     { vraag: "Welke Sovjet-auto werd wereldwijd bekend als goedkope export naar Europa tijdens de Koude Oorlog?", opties: ["Trabant", "Moskvitch", "Lada", "Wartburg"], antwoord: 2 },
@@ -93,16 +97,17 @@ const resultaatEl = document.getElementById("resultaat");
 const scoreEl = document.getElementById("score");
 
 function startQuiz(categorie) {
-  huidigeCategorie = categorie; // sla de gekozen categorie op
-  huidigeVraag = 0; //Begint bij de eerste vraag
-  score = 0; //Zet de score op 0 en reset het ook weer naar 0
+  huidigeCategorie = categorie;
+  huidigeVraag = 0;
+  score = 0;
 
-  // Hier verbergt die de startscherm en laat die de vragen zien, of de Quiz
+
   document.querySelector(".cards-container").style.display = "none";
   quizEl.style.display = "block";
 
-  toonVraag(); //Door dit laad de eerste vraag waardoor de speler kan beginnen aan onze quiz
+  toonVraag();
 }
+
 
 function toonVraag() {
   const vraagData = vragen[huidigeCategorie][huidigeVraag]; //Haalt onze vraag terug door eerst de categorie te checken, en dan welke vraag
@@ -154,3 +159,5 @@ function eindeQuiz() {
   resultaatEl.style.display = "block"; //Laat het eind resultaat zien
   scoreEl.textContent = `${score} / ${vragen[huidigeCategorie].length}`; //Laat je eindscore zien met een calculatie: X / Aantal vragen!
 }
+
+
