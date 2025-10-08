@@ -5,7 +5,7 @@
 const music = document.getElementById('bg-music');
 const toggleBtn = document.getElementById('toggle-music');
 const resetBtn = document.getElementById('reset-button');
-
+const playerName = document.querySelector('#playerName')
 
 
 music.volume = 0.2; // zachter volume
@@ -88,6 +88,7 @@ let huidigeCategorie = null;
 let huidigeVraag = 0;
 let score = 0;
 
+
 // Dit koppelt variabelen in JS aan elementen in je HTML zodat we de tekst en knoppen kunnen aanpassen als we dat willen!.
 const quizEl = document.getElementById("quiz"); 
 const vraagEl = document.getElementById("vraag");
@@ -95,6 +96,8 @@ const optiesEl = document.getElementById("opties");
 const volgendeBtn = document.getElementById("volgende");
 const resultaatEl = document.getElementById("resultaat");
 const scoreEl = document.getElementById("score");
+const namePlayerBtn = document.querySelector("#playerNameButton");
+const namePlayer = document.querySelector("#playerName");
 
 function startQuiz(categorie) {
   huidigeCategorie = categorie;
@@ -107,6 +110,12 @@ function startQuiz(categorie) {
 
   toonVraag();
 }
+
+//spelernaam functie: zorgt ervoor dat je je naam kan verranderen//
+namePlayerBtn.addEventListener('click', function promptUser() {
+const namePlayerBtn = prompt ('Kies je gebruikersnaam');
+namePlayer.textContent = "Naam van speler: " + namePlayerBtn 
+});
 
 
 function toonVraag() {
