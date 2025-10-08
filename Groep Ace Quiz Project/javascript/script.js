@@ -5,6 +5,7 @@
 const music = document.getElementById('bg-music');
 const toggleBtn = document.getElementById('toggle-music');
 const resetBtn = document.getElementById('reset-button');
+const playerName = document.querySelector('#playerName');
 
 
 
@@ -24,26 +25,26 @@ toggleBtn.addEventListener('click', () => {
 //------------------------- \\
 const vragen = {
   zoology: [
-   {vraag: "Hoeveel keren per dag kruisen leeuwen?", opties: ["65", "50", "15", "25"], antwoord: 1 },
-   {vraag: "Wie is de snelste land dier?", opties: ["cheetah", "greyhound", "eagle", "impala"], antwoord: 0},
-   {vraag: "Welke dier heeft de sterkste biteforce?", opties: ["leopard", "Gorilla", "Tijger", "crodile"], antwoord: 3},
-   {vraag: "Welke vogel wordt het snelst op het water?", opties: ["Pinguin", "Eagle", "Vulture", "Seagulls"], antwoord: 0},
-   {vraag: "Welke is de grooste cat van de cat family?", opties: ["leeuw", "jaugar", "Tijger", "Puma"],  antwoord: 2},
-   {vraag: "Hoeveel magen heeft een koe?", opties: ["4", "6", "8", "10"], antwoord: 0},
-   {vraag: "Welke slang is het giftigst?", opties: ["Cobra", "Black mamba", "lowland copperhead", "inland taipan"], antwoord: 3},
-   {vraag: "Welke aap is de most related tot ons mensen?", opties: ["Orangutan", "Chimpanzee", "Baboon", "Gorilla"], antwoord: 1},
-   {vraag: "Hoe cummuniceren dolfijen onder water met elkaar?", opties: ["Signalen", "complexe combinaties", "telepathie", "Geluiden"], antwoord: 1},
-   {vraag: "Welke zoogdieren leggen eieren?", opties: ["Vogelbeldieren", "Reptiles", "Amphians", "Katten"], antwoord: 0},
-   {vraag: "Hoveel poten heeft een spin?", opties: ["10", "15", "12", "8"], antwoord: 3},
-   {vraag: "Welke zee  is de thuisbasis van de meeste haaien?", opties: ["Indische zee", "Atlandtische oceaan", "Grote Oceaan", "Pacific Oceaan",], antwoord: 2},
-   {vraag: "Welke land dier kan het langst zonder water?", opties: ["Kameel", "Woestijnrat", "Beerdiertjes", "Addax",], antoowrd: 2},
-   {vraag: "Welke dieren zijn bekend om hun vermogen om te veranderen van kleur?", opties: ["Gifitge kikkers", "lizards", "zeeleeuwen", "Kameleons"], antwoord: 3},
-   {vraag: "Wat eten panda's voornamelijk?", opties: ["Insecten", "Bamboo", "Fruit", "Noten"], antwoord: 1}, 
-   {vraag: "Hoe noemen we een jongen kangoeroe?", opties: ["Joey", "Cub", "Welf", "Boey"], antwoord: 0},
-   {vraag: "Hoeveel tanden heeft een volwassen haai ongeveer?", opties: ["300", "250", "65", "125"], antwoord: 0},
-   {vraag: "Wat is de IQ van een octupus?", opties: ["165", "70", "100", "225"], antwoord: 2},
-   {vraag: "Welke beer soort is de sterkst?", opties: ["Brownbeer", "Polarbeer", "Blackbeer", "Slothbeer"], antwoord: 1},
-   {vraag: "Wat is de grooste roofdier op land?", opties: ["Leeuw", "Tijger", "Olifant", "Polarbeer"], antoord: 3}, //We hebben 4 keuzes, dus 0, 1, 2, 3. Javascript code begint altijd met 0, niet met 1. Dus als het de vierde optie is, dan wordt het 3, niet 4.
+    { vraag: "Hoeveel keren per dag kruisen leeuwen?", opties: ["65", "50", "15", "25"], antwoord: 1 },
+    { vraag: "Wie is de snelste land dier?", opties: ["cheetah", "greyhound", "eagle", "impala"], antwoord: 0 },
+    { vraag: "Welke dier heeft de sterkste biteforce?", opties: ["leopard", "Gorilla", "Tijger", "crodile"], antwoord: 3 },
+    { vraag: "Welke vogel wordt het snelst op het water?", opties: ["Pinguin", "Eagle", "Vulture", "Seagulls"], antwoord: 0 },
+    { vraag: "Welke is de grooste cat van de cat family?", opties: ["leeuw", "jaugar", "Tijger", "Puma"], antwoord: 2 },
+    { vraag: "Hoeveel magen heeft een koe?", opties: ["4", "6", "8", "10"], antwoord: 0 },
+    { vraag: "Welke slang is het giftigst?", opties: ["Cobra", "Black mamba", "lowland copperhead", "inland taipan"], antwoord: 3 },
+    { vraag: "Welke aap is de most related tot ons mensen?", opties: ["Orangutan", "Chimpanzee", "Baboon", "Gorilla"], antwoord: 1 },
+    { vraag: "Hoe cummuniceren dolfijen onder water met elkaar?", opties: ["Signalen", "complexe combinaties", "telepathie", "Geluiden"], antwoord: 1 },
+    { vraag: "Welke zoogdieren leggen eieren?", opties: ["Vogelbeldieren", "Reptiles", "Amphians", "Katten"], antwoord: 0 },
+    { vraag: "Hoveel poten heeft een spin?", opties: ["10", "15", "12", "8"], antwoord: 3 },
+    { vraag: "Welke zee  is de thuisbasis van de meeste haaien?", opties: ["Indische zee", "Atlandtische oceaan", "Grote Oceaan", "Pacific Oceaan",], antwoord: 2 },
+    { vraag: "Welke land dier kan het langst zonder water?", opties: ["Kameel", "Woestijnrat", "Beerdiertjes", "Addax",], antoowrd: 2 },
+    { vraag: "Welke dieren zijn bekend om hun vermogen om te veranderen van kleur?", opties: ["Gifitge kikkers", "lizards", "zeeleeuwen", "Kameleons"], antwoord: 3 },
+    { vraag: "Wat eten panda's voornamelijk?", opties: ["Insecten", "Bamboo", "Fruit", "Noten"], antwoord: 1 },
+    { vraag: "Hoe noemen we een jongen kangoeroe?", opties: ["Joey", "Cub", "Welf", "Boey"], antwoord: 0 },
+    { vraag: "Hoeveel tanden heeft een volwassen haai ongeveer?", opties: ["300", "250", "65", "125"], antwoord: 0 },
+    { vraag: "Wat is de IQ van een octupus?", opties: ["165", "70", "100", "225"], antwoord: 2 },
+    { vraag: "Welke beer soort is de sterkst?", opties: ["Brownbeer", "Polarbeer", "Blackbeer", "Slothbeer"], antwoord: 1 },
+    { vraag: "Wat is de grooste roofdier op land?", opties: ["Leeuw", "Tijger", "Olifant", "Polarbeer"], antoord: 3 }, //We hebben 4 keuzes, dus 0, 1, 2, 3. Javascript code begint altijd met 0, niet met 1. Dus als het de vierde optie is, dan wordt het 3, niet 4.
     // Hier gaan jullie je vragen in zetten!
   ],
   autoKennis: [
@@ -68,7 +69,7 @@ const vragen = {
     { vraag: "Welke Japanse auto wordt vaak “de eerste serieuze hybride” genoemd?", opties: ["Nissan Micra", "Toyota Prius", "Honda Insight", "Mazda RX-8"], antwoord: 1 },
     { vraag: "Wat was de eerste auto die officieel de 100 km/u doorbrak (1899)?", opties: ["La Jamais Contente", "Mercedes Simplex", "Panhard et Levassor", "Peugeot Type 3"], antwoord: 0 },
 
-    
+
 
   ],
   geschiedenis: [
@@ -108,12 +109,14 @@ let huidigeVraag = 0;
 let score = 0;
 
 // Dit koppelt variabelen in JS aan elementen in je HTML zodat we de tekst en knoppen kunnen aanpassen als we dat willen!.
-const quizEl = document.getElementById("quiz"); 
+const quizEl = document.getElementById("quiz");
 const vraagEl = document.getElementById("vraag");
 const optiesEl = document.getElementById("opties");
 const volgendeBtn = document.getElementById("volgende");
 const resultaatEl = document.getElementById("resultaat");
 const scoreEl = document.getElementById("score");
+const namePlayerBtn = document.querySelector("#playerNameButton")
+const namePlayer = document.querySelector("#playerName")
 
 function startQuiz(categorie) {
   huidigeCategorie = categorie;
@@ -127,6 +130,12 @@ function startQuiz(categorie) {
   toonVraag();
 }
 
+//Speler Naam button \\
+
+namePlayerBtn.addEventListener('click', function promptUser() {
+  const namePlayerBtn = prompt('Kies je gebruikersnaam of verander het')
+  namePlayer.textContent = "Naam van speler: " + namePlayerBtn
+});
 
 function toonVraag() {
   const vraagData = vragen[huidigeCategorie][huidigeVraag]; //Haalt onze vraag terug door eerst de categorie te checken, en dan welke vraag
