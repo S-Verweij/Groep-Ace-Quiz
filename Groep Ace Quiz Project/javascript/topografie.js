@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 //----------------------- \\
 // --Muziek Knop en Data-- \\
 //------------------------ \\
@@ -54,7 +52,7 @@ const vragen = {
     { vraag: "", opties: ["", "", "", ""], antwoord: 0 },
     // Hier gaan jullie je vragen in zetten!
   ],
-  topografie: [
+ topografie: [
    { vraag: "Welke rivier stroomt door Parijs?", opties: ["Donau", "Thames", "Seine", "Nijl"], antwoord: 2 },
 
     // Hier gaan jullie je vragen in zetten!
@@ -80,6 +78,9 @@ const vragen = {
     
   ]
 };
+    // Hier gaan jullie je vragen in zetten!
+
+;
 //---------------- \\
 // --Quiz logica-- \\
 //---------------- \\
@@ -158,4 +159,3 @@ function eindeQuiz() {
   resultaatEl.style.display = "block"; //Laat het eind resultaat zien
   scoreEl.textContent = `${score} / ${vragen[huidigeCategorie].length}`; //Laat je eindscore zien met een calculatie: X / Aantal vragen!
 }
->>>>>>> Stashed changes
