@@ -20,7 +20,7 @@ toggleBtn.addEventListener('click', () => {
 //------------------------- \\
 const vragen = {
   zoology: [
-   { vraag: "", opties: ["", "", "", ""], antwoord: 0 }, //We hebben 4 keuzes, dus 0, 1, 2, 3. Javascript code begint altijd met 0, niet met 1. Dus als het de vierde optie is, dan wordt het 3, niet 4.
+    { vraag: "", opties: ["", "", "", ""], antwoord: 0 }, //We hebben 4 keuzes, dus 0, 1, 2, 3. Javascript code begint altijd met 0, niet met 1. Dus als het de vierde optie is, dan wordt het 3, niet 4.
     // Hier gaan jullie je vragen in zetten!
   ],
   autoKennis: [
@@ -45,15 +45,15 @@ const vragen = {
     { vraag: "Welke Japanse auto wordt vaak “de eerste serieuze hybride” genoemd?", opties: ["Nissan Micra", "Toyota Prius", "Honda Insight", "Mazda RX-8"], antwoord: 1 },
     { vraag: "Wat was de eerste auto die officieel de 100 km/u doorbrak (1899)?", opties: ["La Jamais Contente", "Mercedes Simplex", "Panhard et Levassor", "Peugeot Type 3"], antwoord: 0 },
 
-    
+
 
   ],
   geschiedenis: [
     { vraag: "", opties: ["", "", "", ""], antwoord: 0 },
     // Hier gaan jullie je vragen in zetten!
   ],
- topografie: [
-   { vraag: "Welke rivier stroomt door Parijs?", opties: ["Donau", "Thames", "Seine", "Nijl"], antwoord: 2 },
+  topografie: [
+    { vraag: "Welke rivier stroomt door Parijs?", opties: ["Donau", "Thames", "Seine", "Nijl"], antwoord: 2 },
 
     // Hier gaan jullie je vragen in zetten!
 
@@ -75,10 +75,10 @@ const vragen = {
     { vraag: "Welke zee ligt tussen Saudi-Arabië en Afrika?", opties: ["Arabishe Zee", "Middellandse Zee", "Zwarte Zee", "Rode Zee"], antwoord: 3 },
     { vraag: "Wat is de hoofdstad van Mexico?", opties: ["Guadalajara", "Cancún", "Mecico-Stad", "Monterrey"], antwoord: 2 },
     { vraag: "Welke bergketen loopt langs de westkust van Zuid-Amerika?", opties: ["Andes", "Rocky Mountains", "Himalaya", "Alpen"], antwoord: 0 },
-    
+
   ]
 };
-    // Hier gaan jullie je vragen in zetten!
+// Hier gaan jullie je vragen in zetten!
 
 ;
 //---------------- \\
@@ -90,7 +90,7 @@ let huidigeVraag = 0;
 let score = 0;
 
 // Dit koppelt variabelen in JS aan elementen in je HTML zodat we de tekst en knoppen kunnen aanpassen als we dat willen!.
-const quizEl = document.getElementById("quiz"); 
+const quizEl = document.getElementById("quiz");
 const vraagEl = document.getElementById("vraag");
 const optiesEl = document.getElementById("opties");
 const volgendeBtn = document.getElementById("volgende");
