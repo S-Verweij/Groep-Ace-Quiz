@@ -24,9 +24,29 @@ toggleBtn.addEventListener('click', () => {
 //------------------------- \\
 const vragen = {
   zoology: [
-   { vraag: "", opties: ["", "", "", ""], antwoord: 0 }, //We hebben 4 keuzes, dus 0, 1, 2, 3. Javascript code begint altijd met 0, niet met 1. Dus als het de vierde optie is, dan wordt het 3, niet 4.
+    { vraag: "Hoeveel keren per dag kruisen leeuwen?", opties: ["65", "50", "15", "25"], antwoord: 1 },
+    { vraag: "Wie is de snelste land dier?", opties: ["cheetah", "greyhound", "eagle", "impala"], antwoord: 0 },
+    { vraag: "Welke dier heeft de sterkste biteforce?", opties: ["leopard", "Gorilla", "Tijger", "crodile"], antwoord: 3 },
+    { vraag: "Welke vogel wordt het snelst op het water?", opties: ["Pinguin", "Eagle", "Vulture", "Seagulls"], antwoord: 0 },
+    { vraag: "Welke is de grooste cat van de cat family?", opties: ["leeuw", "jaugar", "Tijger", "Puma"], antwoord: 2 },
+    { vraag: "Hoeveel magen heeft een koe?", opties: ["4", "6", "8", "10"], antwoord: 0 },
+    { vraag: "Welke slang is het giftigst?", opties: ["Cobra", "Black mamba", "lowland copperhead", "inland taipan"], antwoord: 3 },
+    { vraag: "Welke aap is de most related tot ons mensen?", opties: ["Orangutan", "Chimpanzee", "Baboon", "Gorilla"], antwoord: 1 },
+    { vraag: "Hoe cummuniceren dolfijen onder water met elkaar?", opties: ["Signalen", "complexe combinaties", "telepathie", "Geluiden"], antwoord: 1 },
+    { vraag: "Welke zoogdieren leggen eieren?", opties: ["Vogelbeldieren", "Reptiles", "Amphians", "Katten"], antwoord: 0 },
+    { vraag: "Hoveel poten heeft een spin?", opties: ["10", "15", "12", "8"], antwoord: 3 },
+    { vraag: "Welke zee  is de thuisbasis van de meeste haaien?", opties: ["Indische zee", "Atlandtische oceaan", "Grote Oceaan", "Pacific Oceaan",], antwoord: 2 },
+    { vraag: "Welke land dier kan het langst zonder water?", opties: ["Kameel", "Woestijnrat", "Beerdiertjes", "Addax",], antoowrd: 2 },
+    { vraag: "Welke dieren zijn bekend om hun vermogen om te veranderen van kleur?", opties: ["Gifitge kikkers", "lizards", "zeeleeuwen", "Kameleons"], antwoord: 3 },
+    { vraag: "Wat eten panda's voornamelijk?", opties: ["Insecten", "Bamboo", "Fruit", "Noten"], antwoord: 1 },
+    { vraag: "Hoe noemen we een jongen kangoeroe?", opties: ["Joey", "Cub", "Welf", "Boey"], antwoord: 0 },
+    { vraag: "Hoeveel tanden heeft een volwassen haai ongeveer?", opties: ["300", "250", "65", "125"], antwoord: 0 },
+    { vraag: "Wat is de IQ van een octupus?", opties: ["165", "70", "100", "225"], antwoord: 2 },
+    { vraag: "Welke beer soort is de sterkst?", opties: ["Brownbeer", "Polarbeer", "Blackbeer", "Slothbeer"], antwoord: 1 },
+    { vraag: "Wat is de grooste roofdier op land?", opties: ["Leeuw", "Tijger", "Olifant", "Polarbeer"], antoord: 3 },
+  ], //We hebben 4 keuzes, dus 0, 1, 2, 3. Javascript code begint altijd met 0, niet met 1. Dus als het de vierde optie is, dan wordt het 3, niet 4.
     // Hier gaan jullie je vragen in zetten!
-  ],
+ 
   autoKennis: [
     { vraag: "Er waren meerdere pioniers in de autogeschiedenis, maar wie maakte de auto écht beschikbaar voor de massa?", opties: ["Karl Benz", "Gottlieb Daimler", "Nicolas-Joseph Cugnot", "Henry Ford"], antwoord: 3 },
     { vraag: "Welke auto wordt vaak gezien als de eerste seriematig geproduceerde elektrische auto?", opties: ["GM EV1", "Nissan Leaf", "Tesla Roadster", "BMW i3"], antwoord: 0 },
@@ -75,9 +95,27 @@ const vragen = {
     { vraag: "Welke stad was het centrum van het Ottomaanse Rijk?", opties: ["Bagdad", "Istanbul (Constantinopel)", "Mekka", "Damascus"], antwoord: 1 },
     // Hier gaan jullie je vragen in zetten!
   ],
-  topografie: [
-    { vraag: "", opties: ["", "", "", ""], antwoord: 0 },
-    // Hier gaan jullie je vragen in zetten!
+ topografie: [
+    { vraag: "Welke rivier stroomt door Parijs?", opties: ["Donau", "Thames", "Seine", "Nijl"], antwoord: 2 },
+    { vraag: "Wat is de hoofdstad van Canada?", opties: ["Toronto", "Ottawa", "Vacouver", "Montreal"], antwoord: 0 },
+    { vraag: "In welk land ligt de stad Tottori?", opties: ["China", "Zuid-Korea", "Japan", "Noord-Korea"], antwoord: 2 },
+    { vraag: " Wat is het grootste land ter wereld qua oppervlakte?", opties: ["Rusland", "China", "Vrenigde Staten", "Zuid-Afrika"], antwoord: 0 },
+    { vraag: "Welke berg is de hoogste ter wereld?", opties: ["K2", "Kangchenjunga", "Lhotse", "Mount Everest"], antwoord: 3 },
+    { vraag: "Wat is de langste rivier van Egypte?", opties: ["Nijl", "Amazone", "Mississippi", "Yangtze"], antwoord: 0 },
+    { vraag: "Wat is de hoofdstad van Australia?", opties: ["Canberra", "Brisbane", "Melbourne", "Sydney"], antwoord: 0 },
+    { vraag: "In welke land ligt Marrakech?", opties: ["Egypte", "Marrokko", "Griekenland", "Zweden"], antwoord: 1 },
+    { vraag: "Welke woestijn is de grootste ter wereld?", opties: ["Gobi", "Sahara", "Alahari", "Atacama"], antwoord: 1 },
+    { vraag: "Wat is de hoofdstad van Brazilië?", opties: ["Rio de Janeiro", "São Paulo", "Brasília", "Salvador"], antwoord: 2 },
+    { vraag: "Door welk land stroomt de Donau het langst? ", opties: ["Hongarije", "Duitsland", "Oostenrijk", "Roemenië"], antwoord: 3 },
+    { vraag: "Welke rivier is de langste van Azië?", opties: ["Mekong", "Indus", "Yangtze", "Ganges"], antwoord: 2 },
+    { vraag: "Wat is de administratieve hoofdstad van Zuid-Afrika?", opties: ["Kaapstad", "Johannesburg", "Pretoria", "Durban"], antwoord: 2 },
+    { vraag: "Wat is de oude hoofdstad van Japan?", opties: ["Kyoto", "Tokio", "Nagoya", "Tottori"], antwoord: 0 },
+    { vraag: "Wat is de grootste stad van India?", opties: ["New Dehli", "Mumbai", "Kolkata", "Bangalore"], antwoord: 1 },
+    { vraag: "Welke twee landen delen de grens op het eiland Hispaniola?", opties: ["Cuba en Jamaica", "Haïti en Dominicaanse Republiek", "Puerto Rico en Haïti", "Bahama's en Cuba"], antwoord: 1 },
+    { vraag: "Welke zee ligt tussen Saudi-Arabië en Afrika?", opties: ["Arabishe Zee", "Middellandse Zee", "Zwarte Zee", "Rode Zee"], antwoord: 3 },
+    { vraag: "Wat is de hoofdstad van Mexico?", opties: ["Guadalajara", "Cancún", "Mecico-Stad", "Monterrey"], antwoord: 2 },
+    { vraag: "Welke bergketen loopt langs de westkust van Zuid-Amerika?", opties: ["Andes", "Rocky Mountains", "Himalaya", "Alpen"], antwoord: 0 },
+    { vraag: "Welk land grenst aan zowel Spanje als Frankrijk?", opties: ["Andorra", "Portugal", "Italië", "België"], antwoord: 0 },
   ]
 };
 //---------------- \\
