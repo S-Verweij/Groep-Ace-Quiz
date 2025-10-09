@@ -96,8 +96,27 @@ const vragen = {
     // Hier gaan jullie je vragen in zetten!
   ],
   topografie: [
-    { vraag: "", opties: ["", "", "", ""], antwoord: 0 },
-    // Hier gaan jullie je vragen in zetten!
+    { vraag: "Welk land grenst aan zowel Spanje als Frankrijk?", opties: ["Andorra", "Portugal", "Italië", "België"], antwoord: 0 },
+    { vraag: "Welke rivier stroomt door Parijs?", opties: ["Donau", "Thames", "Seine", "Nijl"], antwoord: 2 },
+    { vraag: "Wat is de hoofdstad van Canada?", opties: ["Toronto", "Ottawa", "Vacouver", "Montreal"], antwoord: 0 },
+    { vraag: "In welk land ligt de stad Tottori?", opties: ["China", "Zuid-Korea", "Japan", "Noord-Korea"], antwoord: 2 },
+    { vraag: " Wat is het grootste land ter wereld qua oppervlakte?", opties: ["Rusland", "China", "Vrenigde Staten", "Zuid-Afrika"], antwoord: 0 },
+    { vraag: "Welke berg is de hoogste ter wereld?", opties: ["K2", "Kangchenjunga", "Lhotse", "Mount Everest"], antwoord: 3 },
+    { vraag: "Wat is de langste rivier van Egypte?", opties: ["Nijl", "Amazone", "Mississippi", "Yangtze"], antwoord: 0 },
+    { vraag: "Wat is de hoofdstad van Australia?", opties: ["Canberra", "Brisbane", "Melbourne", "Sydney"], antwoord: 0 },
+    { vraag: "In welke land ligt Marrakech?", opties: ["Egypte", "Marrokko", "Griekenland", "Zweden"], antwoord: 1 },
+    { vraag: "Welke woestijn is de grootste ter wereld?", opties: ["Gobi", "Sahara", "Alahari", "Atacama"], antwoord: 1 },
+    { vraag: "Wat is de hoofdstad van Brazilië?", opties: ["Rio de Janeiro", "São Paulo", "Brasília", "Salvador"], antwoord: 2 },
+    { vraag: "Door welk land stroomt de Donau het langst? ", opties: ["Hongarije", "Duitsland", "Oostenrijk", "Roemenië"], antwoord: 3 },
+    { vraag: "Welke rivier is de langste van Azië?", opties: ["Mekong", "Indus", "Yangtze", "Ganges"], antwoord: 2 },
+    { vraag: "Wat is de administratieve hoofdstad van Zuid-Afrika?", opties: ["Kaapstad", "Johannesburg", "Pretoria", "Durban"], antwoord: 2 },
+    { vraag: "Wat is de oude hoofdstad van Japan?", opties: ["Kyoto", "Tokio", "Nagoya", "Tottori"], antwoord: 0 },
+    { vraag: "Wat is de grootste stad van India?", opties: ["New Dehli", "Mumbai", "Kolkata", "Bangalore"], antwoord: 1 },
+    { vraag: "Welke twee landen delen de grens op het eiland Hispaniola?", opties: ["Cuba en Jamaica", "Haïti en Dominicaanse Republiek", "Puerto Rico en Haïti", "Bahama's en Cuba"], antwoord: 1 },
+    { vraag: "Welke zee ligt tussen Saudi-Arabië en Afrika?", opties: ["Arabishe Zee", "Middellandse Zee", "Zwarte Zee", "Rode Zee"], antwoord: 3 },
+    { vraag: "Wat is de hoofdstad van Mexico?", opties: ["Guadalajara", "Cancún", "Mecico-Stad", "Monterrey"], antwoord: 2 },
+    { vraag: "Welke bergketen loopt langs de westkust van Zuid-Amerika?", opties: ["Andes", "Rocky Mountains", "Himalaya", "Alpen"], antwoord: 0 },
+
   ]
 };
 //---------------- \\
