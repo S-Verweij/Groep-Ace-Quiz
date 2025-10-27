@@ -128,7 +128,60 @@ function startQuiz(categorie) {
   quizEl.style.display = "block";
 
   toonVraag();
+
+  document.querySelector("#power-up").style.display = "block";
 }
+
+//50/50 power up button
+
+// Check of power-up al gebruikt is
+
+let powerUpUsed = false;
+
+
+function usePowerUp() {
+ {
+    // Stop als power-up al gebruikt is
+    if (powerUpUsed) return;
+
+    // Markeer power-up als gebruikt
+    powerUpUsed = true;
+
+    // Maak knop grijs en niet klikbaar
+    const powerButton = document.querySelector("#power-up");
+    powerButton.disabled = true;
+    powerButton.style.backgroundColor = "grey";
+
+    // Vraag de correcte antwoord op
+    const vraagData = vragen[huidigeCategorie][huidigeVraag];
+    const correctAnswer = vraagData.antwoord;
+
+    // Toon de eerste fout antwoord
+    let firstWrong = Math.floor(Math.random() * 4);
+    while (firstWrong === correctAnswer) {
+        firstWrong = Math.floor(Math.random() * 4);
+    }
+
+    // Toon de tweede fout antwoord
+    let secondWrong = Math.floor(Math.random() * 4);
+    while (secondWrong === correctAnswer || secondWrong === firstWrong) {
+        secondWrong = Math.floor(Math.random() * 4);
+    }
+
+    // Maak de foutieve antwoorden rood
+    const buttons = document.querySelectorAll("#opties button");
+    buttons[firstWrong].style.backgroundColor = "salmon";
+    buttons[secondWrong].style.backgroundColor = "salmon";
+    const powerUpRegel = document.querySelector("#power-up-regel");
+    powerUpRegel.style.display = "none";
+}
+
+}
+
+// Klik event voor 50/50 knop
+document.querySelector("#power-up").addEventListener("click", usePowerUp);
+
+
 
 //Speler Naam button \\
 

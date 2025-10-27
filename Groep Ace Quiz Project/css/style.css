@@ -131,6 +131,42 @@ footer {
     color: white;
 }
 
+/* 50/50 power-up knop*/
+#power-up{
+     display: flex;
+  text-align: center;
+  gap: 5px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  width: 130px; /* vaste breedte */
+  background-color: skyblue;
+  color: black;
+  border: solid 4px black;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  justify-content: center;
+  display: none;
+
+}
+
+#power-up:hover{
+    background-color: #0056b3;
+}
+
+#power-up-regel{
+    display: none;
+    text-align: center;
+}
+
+.power-up-button:hover #power-up-regel {
+    display: block;
+}
+
+/* 50/50 power-up knop* word tonen als de spel start is/
+
+
+
 /* Quiz container */
 #quiz {
     display: none; /* standaard verborgen */
