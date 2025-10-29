@@ -159,7 +159,7 @@ footer {
     text-align: center;
 }
 
-.power-up-button:hover #power-up-regel {
+#power-up:hover #power-up-regel {
     display: block;
 }
 
