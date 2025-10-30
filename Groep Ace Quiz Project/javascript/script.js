@@ -5,7 +5,7 @@
 const music = document.getElementById('bg-music');
 const toggleBtn = document.getElementById('toggle-music');
 const resetBtn = document.getElementById('reset-button');
-const playerName = document.querySelector('#playerName')
+const playerName = document.querySelector('#playerName');
 
 
 music.volume = 0.2; // zachter volume
@@ -19,13 +19,43 @@ toggleBtn.addEventListener('click', () => {
     toggleBtn.innerHTML = '<img class="sound-icon" src="img/sound-icon.png" alt="muziek aan/uit"> Stop muziek';
   }
 });
+
+//------------------------- \\
+// -------randomizer------- \\
+//------------------------- \\
+
+let indexArray = [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+];
+
+
+
 //------------------------- \\
 // --Quiz Data en Vragen!-- \\
 //------------------------- \\
 const vragen = {
   zoology: [
-    { vraag: "Hoeveel keren per dag kruisen leeuwen?", opties: ["65", "50", "15", "25"], antwoord: 1 },
-    { vraag: "Wie is de snelste land dier?", opties: ["cheetah", "greyhound", "eagle", "impala"], antwoord: 0 },
+    { vraag: "Hoeveel keren per dag kruisen leeuwen?", opties: [optie ="65", antwoord = "50", optie = "15", optie = "25"], antwoord: 1 },
+    { vraag: "Wie is de snelste land dier?", opties: [optie = "cheetah",optie = "greyhound",optie = "eagle",optie = "impala"], antwoord: 0 },
     { vraag: "Welke dier heeft de sterkste biteforce?", opties: ["leopard", "Gorilla", "Tijger", "crodile"], antwoord: 3 },
     { vraag: "Welke vogel wordt het snelst op het water?", opties: ["Pinguin", "Eagle", "Vulture", "Seagulls"], antwoord: 0 },
     { vraag: "Welke is de grooste cat van de cat family?", opties: ["leeuw", "jaugar", "Tijger", "Puma"], antwoord: 2 },
@@ -73,26 +103,26 @@ const vragen = {
 
   ],
   geschiedenis: [
-    { vraag: "Wie was de eerste president van de Verenigde Staten?", opties: ["Thomas Jefferson", "George Washington", "Abraham Lincoln", "John Adams"], antwoord: 1 },
-    { vraag: "In welk jaar begon de tweede wereldoorlog?", opties: ["1937", "1939", "1941", "1945"], antwoord: 1 },
-    { vraag: "Welke muur viel in 1989?", opties: ["Chinese Muur", "Muur van Jericho", "Berlijnse Muur", "Hadrian's Wall"], antwoord: 2 },
-    { vraag: "Welke Egyptische farao is beroemd vanwege zijn rijkdom en grafmasker?", opties: ["Rames II", "Cleopatra", "Toetanchamon", "Akhenaten"], antwoord: 2 },
-    { vraag: "In welk land vond de Franse revolutie plaats?", opties: ["Frankrijk", "Duitsland", "Italie", "spanje"], antwoord: 0 },
-    { vraag: "Wie ontdenkte Amerika in 1492?", opties: ["Marco Polo", "Vasco da Gama", "Christofer Columbus", "Ferdinand Magelaan"], antwoord: 2 },
-    { vraag: "Wat was de naam van het schip waarop de Pilgrims naar Amerika reisden?", opties: ["Titanic", "Santa Maria", "Mayflower", "Endeavour"], antwoord: 2 },
-    { vraag: "Welke stad werd verwoest door de uitbarsting van de Vesuvius in 79 na Christus? ", opties: ["Pompei", "Rome", "Athene", "Carthago"], antwoord: 0 },
-    { vraag: "Hoe heette de leider van Nazi-Duitsland tijdens de Tweede Wereldoorlog?", opties: ["Joseph Stalin", "Winston Churchill", "Benito Mussolini", "Adolf Hitler"], antwoord: 3 },
-    { vraag: "Wat was de naam van het wereldrijk van Alexander de Grote?", opties: ["Romeinse Rijk", "Perzische Rijk", "Macedonische Rijk", "Ottomaanse Rijk"], antwoord: 2 },
-    { vraag: "Wat was de hoofdstad van het Romeinse Rijk?", opties: ["Rome", "Athene", "Constantinopel", "Alexandrie"], antwoord: 0 },
-    { vraag: "Wie was koning/koningin van Engeland tijdens de Tweede Wereldoorlog?", opties: ["Elizabeth I", "Victoria", "Elizabeth II", "George VI"], antwoord: 3 },
-    { vraag: "In welk jaar werd Nederland bevrijd in de Tweede Wereldoorlog?", opties: ["1944", "1945", "1946", "1947"], antwoord: 1 },
-    { vraag: "Wat betekende de Koude Oorlog?", opties: ["Een oorlog in Siberië", "Een conflict zonder direct militair gevecht tussen VS en Sovjet-Unie", "Een burgeroorlog in Rusland", "Een strijd om Antarctica"], antwoord: 1 },
-    { vraag: "Wie was de eerste man op de maan?", opties: ["Neil Armstrong", "Buzz Aldrin", "Yuri Gagarin", "Michael Collins"], antwoord: 0 },
-    { vraag: "In welk jaar werd de Euro ingevoerd als munt in Nederland?", opties: ["1999", "2000", "2001", "2002"], antwoord: 3 },
-    { vraag: "Wat was de bijnaam van Napoleon Bonaparte?", opties: ["De IJzeren Hertog", "De Kleine Generaal", "De Zonnekoning", "De Corsicaan"], antwoord: 1 },
-    { vraag: "Waar werd Anne Frank geboren?", opties: ["Amsterdam", "Frankfurt", "Parijs", "Berlijn"], antwoord: 1 },
-    { vraag: "Welke oorlog vond plaats tussen Noord- en Zuid-Vietnam?", opties: ["Koreaanse Oorlog", "Vietnamoorlog", "Eerste Wereldoorlog", "Cambodjaanse Oorlog"], antwoord: 1 },
-    { vraag: "Welke stad was het centrum van het Ottomaanse Rijk?", opties: ["Bagdad", "Istanbul (Constantinopel)", "Mekka", "Damascus"], antwoord: 1 },
+    { vraag: "0Wie was de eerste president van de Verenigde Staten?", opties: ["Thomas Jefferson", "George Washington", "Abraham Lincoln", "John Adams"], antwoord: 1 },
+    { vraag: "1In welk jaar begon de tweede wereldoorlog?", opties: ["1937", "1939", "1941", "1945"], antwoord: 1 },
+    { vraag: "2Welke muur viel in 1989?", opties: ["Chinese Muur", "Muur van Jericho", "Berlijnse Muur", "Hadrian's Wall"], antwoord: 2 },
+    { vraag: "3Welke Egyptische farao is beroemd vanwege zijn rijkdom en grafmasker?", opties: ["Rames II", "Cleopatra", "Toetanchamon", "Akhenaten"], antwoord: 2 },
+    { vraag: "4In welk land vond de Franse revolutie plaats?", opties: ["Frankrijk", "Duitsland", "Italie", "spanje"], antwoord: 0 },
+    { vraag: "5Wie ontdenkte Amerika in 1492?", opties: ["Marco Polo", "Vasco da Gama", "Christofer Columbus", "Ferdinand Magelaan"], antwoord: 2 },
+    { vraag: "6Wat was de naam van het schip waarop de Pilgrims naar Amerika reisden?", opties: ["Titanic", "Santa Maria", "Mayflower", "Endeavour"], antwoord: 2 },
+    { vraag: "7Welke stad werd verwoest door de uitbarsting van de Vesuvius in 79 na Christus? ", opties: ["Pompei", "Rome", "Athene", "Carthago"], antwoord: 0 },
+    { vraag: "8Hoe heette de leider van Nazi-Duitsland tijdens de Tweede Wereldoorlog?", opties: ["Joseph Stalin", "Winston Churchill", "Benito Mussolini", "Adolf Hitler"], antwoord: 3 },
+    { vraag: "9Wat was de naam van het wereldrijk van Alexander de Grote?", opties: ["Romeinse Rijk", "Perzische Rijk", "Macedonische Rijk", "Ottomaanse Rijk"], antwoord: 2 },
+    { vraag: "10Wat was de hoofdstad van het Romeinse Rijk?", opties: ["Rome", "Athene", "Constantinopel", "Alexandrie"], antwoord: 0 },
+    { vraag: "11Wie was koning/koningin van Engeland tijdens de Tweede Wereldoorlog?", opties: ["Elizabeth I", "Victoria", "Elizabeth II", "George VI"], antwoord: 3 },
+    { vraag: "12In welk jaar werd Nederland bevrijd in de Tweede Wereldoorlog?", opties: ["1944", "1945", "1946", "1947"], antwoord: 1 },
+    { vraag: "13Wat betekende de Koude Oorlog?", opties: ["Een oorlog in Siberië", "Een conflict zonder direct militair gevecht tussen VS en Sovjet-Unie", "Een burgeroorlog in Rusland", "Een strijd om Antarctica"], antwoord: 1 },
+    { vraag: "14Wie was de eerste man op de maan?", opties: ["Neil Armstrong", "Buzz Aldrin", "Yuri Gagarin", "Michael Collins"], antwoord: 0 },
+    { vraag: "15In welk jaar werd de Euro ingevoerd als munt in Nederland?", opties: ["1999", "2000", "2001", "2002"], antwoord: 3 },
+    { vraag: "16Wat was de bijnaam van Napoleon Bonaparte?", opties: ["De IJzeren Hertog", "De Kleine Generaal", "De Zonnekoning", "De Corsicaan"], antwoord: 1 },
+    { vraag: "17Waar werd Anne Frank geboren?", opties: ["Amsterdam", "Frankfurt", "Parijs", "Berlijn"], antwoord: 1 },
+    { vraag: "18Welke oorlog vond plaats tussen Noord- en Zuid-Vietnam?", opties: ["Koreaanse Oorlog", "Vietnamoorlog", "Eerste Wereldoorlog", "Cambodjaanse Oorlog"], antwoord: 1 },
+    { vraag: "19Welke stad was het centrum van het Ottomaanse Rijk?", opties: ["Bagdad", "Istanbul (Constantinopel)", "Mekka", "Damascus"], antwoord: 1 },
     // Hier gaan jullie je vragen in zetten!
   ],
  topografie: [
@@ -139,15 +169,17 @@ const namePlayer = document.querySelector("#playerName");
 
 function startQuiz(categorie) {
   huidigeCategorie = categorie;
-  huidigeVraag = 0;
+  
+  huidigeVraag = random(0, indexArray.length);
+  const index = indexArray.indexOf(huidigeVraag);
+  indexArray.splice(index, 1);
   score = 0;
-
 
   document.querySelector(".cards-container").style.display = "none";
   quizEl.style.display = "block";
 
   toonVraag();
-}
+};
 
 //spelernaam functie: zorgt ervoor dat je je naam kan verranderen//
 namePlayerBtn.addEventListener('click', function promptUser() {
@@ -193,13 +225,20 @@ function controleerAntwoord(keuze) {
 }
 
 function volgendeVraag() {
-  huidigeVraag++;
-  if (huidigeVraag < vragen[huidigeCategorie].length) { //Als er nog vragen zijn, ga naar het volgende vraag
+  if (indexArray.length > 0) {
+    const randomIndex = random(0, indexArray.length); // Kies random positie in indexArray
+    huidigeVraag = indexArray[randomIndex];           // Pak de echte vraag index
+    indexArray.splice(randomIndex, 1);                // Verwijder deze index uit indexArray
     toonVraag();
-  } else { //Zo niet? Dan ga je naar het eindscherm!
+  } else {
     eindeQuiz();
   }
-}
+};
+  console.log(indexArray)
+  console.log(huidigeVraag)
+  indexArray.splice(huidigeVraag, 1)
+  console.log(indexArray)
+
 
 function eindeQuiz() {
   quizEl.style.display = "none"; //Verbergt de quiz 
@@ -207,4 +246,11 @@ function eindeQuiz() {
   scoreEl.textContent = `${score} / ${vragen[huidigeCategorie].length}`; //Laat je eindscore zien met een calculatie: X / Aantal vragen!
 }
 
+
+
+
+function random(min, max){
+  return Math.floor(Math.random() * (max - min) + min)
+
+}
 
