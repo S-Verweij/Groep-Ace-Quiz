@@ -54,7 +54,7 @@ const vragen = {
   ],
  topografie: [
     { vraag: "Welke rivier stroomt door Parijs?", opties: ["Donau", "Thames", "Seine", "Nijl"], antwoord: 2 },
-    { vraag: "Wat is de hoofdstad van Canada?", opties: ["Toronto", "Ottawa", "Vacouver", "Montreal"], antwoord: 0 },
+    { vraag: "Wat is de hoofdstad van Canada?", opties: ["Toronto", "Ottawa", "Vacouver", "Montreal"], antwoord: 1 },
     { vraag: "In welk land ligt de stad Tottori?", opties: ["China", "Zuid-Korea", "Japan", "Noord-Korea"], antwoord: 2 },
     { vraag: " Wat is het grootste land ter wereld qua oppervlakte?", opties: ["Rusland", "China", "Vrenigde Staten", "Zuid-Afrika"], antwoord: 0 },
     { vraag: "Welke berg is de hoogste ter wereld?", opties: ["K2", "Kangchenjunga", "Lhotse", "Mount Everest"], antwoord: 3 },
