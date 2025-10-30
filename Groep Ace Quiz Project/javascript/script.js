@@ -6,6 +6,10 @@ const music = document.getElementById('bg-music');
 const toggleBtn = document.getElementById('toggle-music');
 const resetBtn = document.getElementById('reset-button');
 const playerName = document.querySelector('#playerName');
+<<<<<<< HEAD
+=======
+
+>>>>>>> cb7f4347beeb6f5a2a974f237bb4acc8e40710f5
 
 
 music.volume = 0.2; // zachter volume
@@ -54,8 +58,13 @@ let indexArray = [
 //------------------------- \\
 const vragen = {
   zoology: [
+<<<<<<< HEAD
     { vraag: "Hoeveel keren per dag kruisen leeuwen?", opties: [optie ="65", antwoord = "50", optie = "15", optie = "25"], antwoord: 1 },
     { vraag: "Wie is de snelste land dier?", opties: [optie = "cheetah",optie = "greyhound",optie = "eagle",optie = "impala"], antwoord: 0 },
+=======
+    { vraag: "Hoeveel keren per dag kruisen leeuwen?", opties: ["65", "50", "15", "25"], antwoord: 1 },
+    { vraag: "Wie is de snelste land dier?", opties: ["cheetah", "greyhound", "eagle", "impala"], antwoord: 0 },
+>>>>>>> cb7f4347beeb6f5a2a974f237bb4acc8e40710f5
     { vraag: "Welke dier heeft de sterkste biteforce?", opties: ["leopard", "Gorilla", "Tijger", "crodile"], antwoord: 3 },
     { vraag: "Welke vogel wordt het snelst op het water?", opties: ["Pinguin", "Eagle", "Vulture", "Seagulls"], antwoord: 0 },
     { vraag: "Welke is de grooste cat van de cat family?", opties: ["leeuw", "jaugar", "Tijger", "Puma"], antwoord: 2 },
@@ -73,8 +82,12 @@ const vragen = {
     { vraag: "Hoeveel tanden heeft een volwassen haai ongeveer?", opties: ["300", "250", "65", "125"], antwoord: 0 },
     { vraag: "Wat is de IQ van een octupus?", opties: ["165", "70", "100", "225"], antwoord: 2 },
     { vraag: "Welke beer soort is de sterkst?", opties: ["Brownbeer", "Polarbeer", "Blackbeer", "Slothbeer"], antwoord: 1 },
+<<<<<<< HEAD
     { vraag: "Wat is de grooste roofdier op land?", opties: ["Leeuw", "Tijger", "Olifant", "Polarbeer"], antoord: 3 },
   ], //We hebben 4 keuzes, dus 0, 1, 2, 3. Javascript code begint altijd met 0, niet met 1. Dus als het de vierde optie is, dan wordt het 3, niet 4.
+=======
+    { vraag: "Wat is de grooste roofdier op land?", opties: ["Leeuw", "Tijger", "Olifant", "Polarbeer"], antoord: 3 }, //We hebben 4 keuzes, dus 0, 1, 2, 3. Javascript code begint altijd met 0, niet met 1. Dus als het de vierde optie is, dan wordt het 3, niet 4.
+>>>>>>> cb7f4347beeb6f5a2a974f237bb4acc8e40710f5
     // Hier gaan jullie je vragen in zetten!
  
   autoKennis: [
@@ -99,7 +112,7 @@ const vragen = {
     { vraag: "Welke Japanse auto wordt vaak “de eerste serieuze hybride” genoemd?", opties: ["Nissan Micra", "Toyota Prius", "Honda Insight", "Mazda RX-8"], antwoord: 1 },
     { vraag: "Wat was de eerste auto die officieel de 100 km/u doorbrak (1899)?", opties: ["La Jamais Contente", "Mercedes Simplex", "Panhard et Levassor", "Peugeot Type 3"], antwoord: 0 },
 
-    
+
 
   ],
   geschiedenis: [
@@ -125,7 +138,12 @@ const vragen = {
     { vraag: "19Welke stad was het centrum van het Ottomaanse Rijk?", opties: ["Bagdad", "Istanbul (Constantinopel)", "Mekka", "Damascus"], antwoord: 1 },
     // Hier gaan jullie je vragen in zetten!
   ],
+<<<<<<< HEAD
  topografie: [
+=======
+  topografie: [
+    { vraag: "Welk land grenst aan zowel Spanje als Frankrijk?", opties: ["Andorra", "Portugal", "Italië", "België"], antwoord: 0 },
+>>>>>>> cb7f4347beeb6f5a2a974f237bb4acc8e40710f5
     { vraag: "Welke rivier stroomt door Parijs?", opties: ["Donau", "Thames", "Seine", "Nijl"], antwoord: 2 },
     { vraag: "Wat is de hoofdstad van Canada?", opties: ["Toronto", "Ottawa", "Vacouver", "Montreal"], antwoord: 0 },
     { vraag: "In welk land ligt de stad Tottori?", opties: ["China", "Zuid-Korea", "Japan", "Noord-Korea"], antwoord: 2 },
@@ -145,7 +163,11 @@ const vragen = {
     { vraag: "Welke zee ligt tussen Saudi-Arabië en Afrika?", opties: ["Arabishe Zee", "Middellandse Zee", "Zwarte Zee", "Rode Zee"], antwoord: 3 },
     { vraag: "Wat is de hoofdstad van Mexico?", opties: ["Guadalajara", "Cancún", "Mecico-Stad", "Monterrey"], antwoord: 2 },
     { vraag: "Welke bergketen loopt langs de westkust van Zuid-Amerika?", opties: ["Andes", "Rocky Mountains", "Himalaya", "Alpen"], antwoord: 0 },
+<<<<<<< HEAD
     { vraag: "Welk land grenst aan zowel Spanje als Frankrijk?", opties: ["Andorra", "Portugal", "Italië", "België"], antwoord: 0 },
+=======
+
+>>>>>>> cb7f4347beeb6f5a2a974f237bb4acc8e40710f5
   ]
 };
 //---------------- \\
@@ -158,14 +180,19 @@ let score = 0;
 
 
 // Dit koppelt variabelen in JS aan elementen in je HTML zodat we de tekst en knoppen kunnen aanpassen als we dat willen!.
-const quizEl = document.getElementById("quiz"); 
+const quizEl = document.getElementById("quiz");
 const vraagEl = document.getElementById("vraag");
 const optiesEl = document.getElementById("opties");
 const volgendeBtn = document.getElementById("volgende");
 const resultaatEl = document.getElementById("resultaat");
 const scoreEl = document.getElementById("score");
+<<<<<<< HEAD
 const namePlayerBtn = document.querySelector("#playerNameButton");
 const namePlayer = document.querySelector("#playerName");
+=======
+const namePlayerBtn = document.querySelector("#playerNameButton")
+const namePlayer = document.querySelector("#playerName")
+>>>>>>> cb7f4347beeb6f5a2a974f237bb4acc8e40710f5
 
 function startQuiz(categorie) {
   huidigeCategorie = categorie;
@@ -179,6 +206,7 @@ function startQuiz(categorie) {
   quizEl.style.display = "block";
 
   toonVraag();
+<<<<<<< HEAD
 };
 
 //spelernaam functie: zorgt ervoor dat je je naam kan verranderen//
@@ -186,7 +214,69 @@ namePlayerBtn.addEventListener('click', function promptUser() {
 const namePlayerBtn = prompt ('Kies je gebruikersnaam');
 namePlayer.textContent = "Naam van speler: " + namePlayerBtn 
 });
+=======
 
+  document.querySelector("#power-up").style.display = "block";
+}
+>>>>>>> cb7f4347beeb6f5a2a974f237bb4acc8e40710f5
+
+//50/50 power up button
+
+// Check of power-up al gebruikt is
+
+let powerUpUsed = false;
+
+
+function usePowerUp() {
+ {
+    // Stop als power-up al gebruikt is
+    if (powerUpUsed) return;
+
+    // Markeer power-up als gebruikt
+    powerUpUsed = true;
+
+    // Maak knop grijs en niet klikbaar
+    const powerButton = document.querySelector("#power-up");
+    powerButton.disabled = true;
+    powerButton.style.backgroundColor = "grey";
+
+    // Vraag de correcte antwoord op
+    const vraagData = vragen[huidigeCategorie][huidigeVraag];
+    const correctAnswer = vraagData.antwoord;
+
+    // Toon de eerste fout antwoord
+    let firstWrong = Math.floor(Math.random() * 4);
+    while (firstWrong === correctAnswer) {
+        firstWrong = Math.floor(Math.random() * 4);
+    }
+
+    // Toon de tweede fout antwoord
+    let secondWrong = Math.floor(Math.random() * 4);
+    while (secondWrong === correctAnswer || secondWrong === firstWrong) {
+        secondWrong = Math.floor(Math.random() * 4);
+    }
+
+    // Maak de foutieve antwoorden rood
+    const buttons = document.querySelectorAll("#opties button");
+    buttons[firstWrong].style.backgroundColor = "salmon";
+    buttons[secondWrong].style.backgroundColor = "salmon";
+    const powerUpRegel = document.querySelector("#power-up-regel");
+    powerUpRegel.style.display = "none";
+}
+
+}
+
+// Klik event voor 50/50 knop
+document.querySelector("#power-up").addEventListener("click", usePowerUp);
+
+
+
+//Speler Naam button \\
+
+namePlayerBtn.addEventListener('click', function promptUser() {
+  const namePlayerBtn = prompt('Kies je gebruikersnaam of verander het')
+  namePlayer.textContent = "Naam van speler: " + namePlayerBtn
+});
 
 function toonVraag() {
   const vraagData = vragen[huidigeCategorie][huidigeVraag]; //Haalt onze vraag terug door eerst de categorie te checken, en dan welke vraag
