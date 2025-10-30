@@ -149,6 +149,14 @@ function startQuiz(categorie) {
   toonVraag();
 
   document.querySelector("#power-up").style.display = "block";
+
+   if (categorie === "topografie") {
+    document.body.style.backgroundImage = "url('https://media.sciencephoto.com/image/e0500430/800wm/E0500430-Topographical_map_of_the_earth.jpg')";
+    headerTopo = document.querySelector("header");
+    footerTopo = document.querySelector("footer");
+    headerTopo.style.backgroundColor = "skyblue";
+    footerTopo.style.backgroundColor = "skyblue";
+  }
 }
 
 //50/50 power up button
