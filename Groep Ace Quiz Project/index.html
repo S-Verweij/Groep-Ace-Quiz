@@ -1,12 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Groep Ace | Project Quiz</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Groep Ace | Project Quiz</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-    <script src="javascript/script.js"></script>
+  <header>
+    <h1>Welkom bij Quizzyy!</h1>
+  </header>
+  <br />
+  <br />
+  <!-- Muziek Knop -->
+  <aside class="music-control">
+    <button id="toggle-music">
+      <img class="sound-icon" src="img/sound-icon.png" alt="muziek aan/uit" />
+      <span class="text-stop">Stop muziek</span>
+      <span class="text-play" style="display: none">Speel muziek</span>
+    </button>
+    <!-- Reset Knop -->
+    <button id="reset-button">
+      <a class="button-home" href="/Groep Ace Quiz Project/index.html">Terug naar start</a>
+    </button>
+    <!-- Speler Naam Knop -->
+    <button id="playerNameButton">
+      Verander hier je naam!
+    </button>
+
+
+    <button id="power-up">
+      50/50 Power Up
+    </button>
+<p id="power-up-regel">2 foute antwoorden worden tonen <br> Je mag dit 1 keer gebruiken</p>
+    
+
+
+
+
+  </aside>
+  <!-- De Cards met onze categorieen -->
+  <main class="cards-container">
+    <div class="grid">
+      <div class="card" onclick="startQuiz('zoology')">
+        <div class="card-titel">
+          <h1>Zoology</h1>
+        </div>
+        <img class="image-quiz" src="img/zoology-image.png" width="475" height="500" alt="zoology-image" />
+        <div class="image-text">Hoeveel weet jij van dieren?</div>
+        <div class="author">
+          <b>Idee door:</b> <em>Will-Clair Finisie</em>
+        </div>
+      </div>
+      <div class="card" onclick="startQuiz('autoKennis')">
+        <div class="card-titel">
+          <h1>Auto Kennis</h1>
+        </div>
+        <img class="image-quiz" src="img/auto's-image.jpg" width="475" height="500" alt="auto-image" />
+        <div class="image-text">Hoeveel weet jij van auto's?</div>
+        <div class="author"><b>Idee door:</b> <em>Suriyo Verweij</em></div>
+      </div>
+      <div class="card" onclick="startQuiz('geschiedenis')">
+        <div class="card-titel">
+          <h1>Geschiedenis</h1>
+        </div>
+        <img class="image-quiz" src="img/geschiedenis-image.jpg" width="475" height="500" alt="geschiedenis-image" />
+        <div class="image-text">Hoeveel weet jij van onze geschiedenis?</div>
+        <div class="author"><b>Idee door:</b> <em>Luka Jalžabetić</em></div>
+      </div>
+      <div class="card" onclick="startQuiz('topografie')">
+        <div class="card-titel">
+          <h1>Topografie</h1>
+        </div>
+        <img class="image-quiz" src="img/topografie-image.jpg" width="475" height="500" alt="topografie-image" />
+        <div class="image-text">Hoeveel weet jij van onze topografie?</div>
+        <div class="author"><b>Idee door:</b> <em>Wendell Long</em></div>
+      </div>
+    </div>
+  </main>
+  <!-- Hier is de sectie dat de vragen doet van onze Quiz-->
+  <div id="quiz" style="display: none">
+    <!--Dit zorgt ervoor dat we het niet zien totdat we de button klikt!-->
+    <h2 id="vraag"></h2>
+    <div id="opties"></div>
+    <button id="volgende" onclick="volgendeVraag()">Volgende</button>
+    <!--Dit is de button!-->
+  </div>
+
+  <div id="resultaat" style="display: none">
+    <h2>Je score: <span id="score"></span></h2>
+    <button id="resultaat-button" onclick="location.reload()">
+      Probeer het opniew of probeer een andere categorie!
+    </button>
+  </div>
+  <br />
+  <br />
+  <!-- Achtergrond Muziek -->
+  <audio id="bg-music" loop autoplay>
+    <source src="/Groep Ace Quiz Project/audio/Kahoot Lobby Music.mp3" type="audio/mpeg" />
+  </audio>
+  <!-- Footer -->
+  <footer>
+    <h1 id="playerName">Naam van speler:</h1>
+  </footer>
+  <script src="javascript/script.js"></script>
 </body>
+
 </html>
