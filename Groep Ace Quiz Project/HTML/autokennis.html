@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ace Quiz: Autokennis</title>
+    <link rel="stylesheet" href="/Groep Ace Quiz Project/css/autokennis.css">
+</head>
+
+<body>
+    <header>
+        <h1 id="playerName"> </h1>
+    </header>
+
+    <aside class="interactive-buttons">
+        <!-- Speler Naam Knop -->
+        <button id="playerNameButton">
+            Verander hier je naam!
+        </button>
+        <button id="power-up">
+            50/50 Power Up
+        </button>
+    </aside>
+    <main class="cards-container">
+            <div class="card" onclick="startQuiz ('autoKennis')">
+                <div class="card-titel">
+                    <h1>Klik op mij om te beginnen!</h1>
+                </div>
+                <img class="image-quiz" src="/Groep Ace Quiz Project/img/auto's-image.jpg" width="475" height="500"
+                    alt="auto-image" />
+            </div>
+            <!-- Hier is de sectie dat de vragen doet van onze Quiz-->
+            <div id="quiz" style="display: none">
+                <h2 id="vraag"></h2>
+                <div id="opties"></div>
+                <button id="volgende" onclick="volgendeVraag()">Volgende</button>
+            </div>
+
+            <div id="resultaat" style="display: block">
+                <h2>Je score: <span id="score"></span></h2>
+                <button id="resultaat-button" onclick="location.reload()">
+                    Probeer Opnieuw
+                </button>
+                <!-- Reset Knop -->
+                <button id="reset-button">
+                    <a class="button-home" href="/Groep Ace Quiz Project/index.html">Terug naar start</a>
+                </button>
+            </div>
+    </main>
+    <script src="/Groep Ace Quiz Project/javascript/autokennis.js"></script>
+</body>
+
+</html>

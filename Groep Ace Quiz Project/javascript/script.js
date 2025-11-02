@@ -148,7 +148,7 @@ function startQuiz(categorie) {
 
   toonVraag();
 
-  document.querySelector("#power-up").style.display = "block";
+    document.querySelector("#power-up").style.display = "block";
 
    if (categorie === "topografie") {
     document.body.style.backgroundImage = "url('https://media.sciencephoto.com/image/e0500430/800wm/E0500430-Topographical_map_of_the_earth.jpg')";
@@ -213,7 +213,7 @@ document.querySelector("#power-up").addEventListener("click", usePowerUp);
 //Speler Naam button \\
 
 namePlayerBtn.addEventListener('click', function promptUser() {
-  const namePlayerBtn = prompt('Kies je gebruikersnaam of verander het')
+  let namePlayerBtn = prompt('Kies je gebruikersnaam of verander het')
   namePlayer.textContent = "Naam van speler: " + namePlayerBtn
 });
 

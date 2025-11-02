@@ -2,23 +2,27 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     font-family: Arial, Helvetica, sans-serif;
     height: 100%;
     margin: 0;
-    background-image: url('/Groep\ Ace\ Quiz\ Project/img/website-background.jpg');
+    background-image: url('/Groep\ Ace\ Quiz\ Project/video/autobg.gif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
+
 header {
-    background-color: maroon;
+    background-color: rgb(170, 80, 255);
+    background-image: linear-gradient(to bottom, rgb(170, 80, 255), rgb(250, 44, 44));
     border-bottom: 5px solid black;
     padding: 1px;
     text-align: center;
     font-size: 35px;
     color: white;
+    margin-bottom: 30px;
 }
 
 .cards-container {
@@ -41,7 +45,12 @@ header {
 
 .card {
     display: block;
-    background: maroon;
+    width: 800px;
+    height: 800px;
+    background-color: rgb(170, 80, 255);
+    background-image: linear-gradient(to bottom, rgb(170, 80, 255), rgb(250, 44, 44), rgb(247, 247, 39));
+    margin-bottom: 40px;
+    margin-left: 850px;
     padding: 20px;
     border: 3px solid black;
     border-radius: 10px;
@@ -50,20 +59,19 @@ header {
     transition: transform 0.2s;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-}
-
 .card:hover {
     /*Dit past aan hoe de card eruit ziet als je met je muis erover gaat*/
     transform: scale(1.05);
-    background: rgb(82, 0, 0);
 }
 
 .card-titel {
     margin: 5px;
     text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 .image-text {
@@ -74,6 +82,8 @@ a {
 }
 
 .image-quiz {
+    margin-top: 50px;
+    margin-left: 130px;
     border-radius: 10px;
     border: 3px solid black;
 }
@@ -88,28 +98,30 @@ a {
 
 }
 
-.music-control {
-  position: fixed;   /* Blijft op dezelfde plek bij scrollen. Is fijner */
-  top: 20px;        
-  left: 20px;      
-  z-index: 1000;     /* zorgt dat de knop boven andere elementen ligt */  
+.interactive-buttons {
+    position: fixed;
+    /* Blijft op dezelfde plek bij scrollen. Is fijner */
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    /* zorgt dat de knop boven andere elementen ligt */
 }
 
-/* Muziekknop linksboven */
-.music-control button {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 8px 12px;
-  margin-bottom: 10px;
-  width: 130px; /* vaste breedte */
-  background-color: skyblue;
-  color: black;
-  border: solid 4px black;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-  justify-content: center;
+.interactive-buttons button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    width: 130px;
+    /* vaste breedte */
+    background-color: skyblue;
+    color: black;
+    border: solid 4px black;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    justify-content: center;
 }
 
 .button-home {
@@ -117,14 +129,8 @@ a {
     text-decoration: none;
 }
 
-.music-control button:hover {
-  background-color: #0056b3;
-}
-
-.sound-icon {
-  height: 20px;
-  width: 20px;
-  vertical-align: middle;
+.interactive-buttons button:hover {
+    background-color: #0056b3;
 }
 
 footer {
@@ -137,29 +143,30 @@ footer {
 }
 
 /* 50/50 power-up knop*/
-#power-up{
-     display: flex;
-  text-align: center;
-  gap: 5px;
-  padding: 8px 12px;
-  margin-bottom: 10px;
-  width: 130px; /* vaste breedte */
-  background-color: skyblue;
-  color: black;
-  border: solid 4px black;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-  justify-content: center;
-  display: none;
+#power-up {
+    display: flex;
+    text-align: center;
+    gap: 5px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    width: 130px;
+    /* vaste breedte */
+    background-color: skyblue;
+    color: black;
+    border: solid 4px black;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    justify-content: center;
+    display: none;
 
 }
 
-#power-up:hover{
+#power-up:hover {
     background-color: #0056b3;
 }
 
-#power-up-regel{
+#power-up-regel {
     display: none;
     text-align: center;
 }
@@ -174,7 +181,8 @@ footer {
 
 /* Quiz container */
 #quiz {
-    display: none; /* standaard verborgen */
+    display: none;
+    /* standaard verborgen */
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
@@ -229,18 +237,22 @@ footer {
 }
 
 /* Eind Resultaat */
-#resultaat {
-    display: none; /* Standaard verborgen zodat het niet overlapt met de rest */
+#resultaat,
+#reset {
+    display: none;
+    /* Standaard verborgen zodat het niet overlapt met de rest */
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
-    background: #f8f8f8;
+    background: red;
+    background-image: linear-gradient(rgb(250, 44, 44), rgb(247, 247, 39));
     border: 3px solid black;
     border-radius: 10px;
     text-align: center;
 }
 
-#resultaat-button {
+#resultaat-button,
+#reset-button {
     padding: 10px;
     font-size: 16px;
     border: 2px solid black;
@@ -250,14 +262,8 @@ footer {
     transition: background-color 0.2s, transform 0.2s;
 }
 
-#resultaat-button:hover {
+#resultaat-button:hover,
+#reset-button:hover {
     background-color: deepskyblue;
     transform: scale(1.03);
-}
-
-@media (max-width: 600px) { /* Media moet altijd onderaan door hoe die de code leest. Dit zorgt ervoor dat de quiz wordt aangepast met de scherm grootte */
-  nav, article {
-    width: 100%;
-    height: auto;
- }
 }
