@@ -238,9 +238,9 @@ document.querySelector("#power-up").addEventListener("click", usePowerUp);
 namePlayerBtn.addEventListener('click', function promptUser() {
     const namePlayerBtn = prompt('Kies je gebruikersnaam of verander het');
     if (namePlayerBtn) {
-        namePlayer.textContent = "Welkom bij autoKennis, " + namePlayerBtn + "!";
+        namePlayer.textContent = "Welkom bij Auto Kennis, " + namePlayerBtn + "!";
     } else {
-        namePlayer.textContent = "Welkom bij autoKennis, Speler!";
+        namePlayer.textContent = "Welkom bij Auto Kennis, Speler!";
     }
 });
 
