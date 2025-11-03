@@ -31,13 +31,8 @@
                     alt="auto-image" />
             </div>
             <!-- Hier is de sectie dat de vragen doet van onze Quiz-->
-            <div id="quiz" style="display: none">
-                <h2 id="vraag"></h2>
-                <div id="opties"></div>
-                <button id="volgende" onclick="volgendeVraag()">Volgende</button>
-            </div>
-
-            <div id="resultaat" style="display: block">
+    </main>
+    <div id="resultaat" style="display: none">
                 <h2>Je score: <span id="score"></span></h2>
                 <button id="resultaat-button" onclick="location.reload()">
                     Probeer Opnieuw
@@ -47,7 +42,13 @@
                     <a class="button-home" href="/Groep Ace Quiz Project/index.html">Terug naar start</a>
                 </button>
             </div>
-    </main>
+    <div id="quiz" style="display: none">
+                <h2 id="vraag"></h2>
+                <div id="opties"></div>
+                <button id="volgende" onclick="volgendeVraag()">Volgende</button>
+            </div>
+
+            
     <script src="/Groep Ace Quiz Project/javascript/autokennis.js"></script>
 </body>
 
