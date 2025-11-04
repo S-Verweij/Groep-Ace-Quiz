@@ -89,7 +89,7 @@ a {
 
 .image-quiz {
     margin-top: 50px;
-    margin-left: 130px;
+    margin-left: 70px;
     border-radius: 10px;
     border: 3px solid black;
 }
@@ -291,4 +291,10 @@ footer {
 #reset-button:hover {
     background-color: deepskyblue;
     transform: scale(1.03);
+}
+
+@media screen and (max-width: 1921px) {
+    .card {
+        margin-left: 580px;
+    }
 }

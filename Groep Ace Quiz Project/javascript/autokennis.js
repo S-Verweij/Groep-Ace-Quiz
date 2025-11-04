@@ -44,7 +44,7 @@ let indexArray = [
 const vragen = {
     autoKennis: [
         {
-            vraag: "Er waren meerdere pioniers in de autogeschiedenis, maar wie maakte de auto écht beschikbaar voor de massa?",
+            vraag: "Er waren meerdere pioniers in de autoautokennis, maar wie maakte de auto écht beschikbaar voor de massa?",
             opties: ["Karl Benz", "Gottlieb Daimler", "Nicolas-Joseph Cugnot", "Henry Ford"],
             antwoord: 3
         },
@@ -162,6 +162,8 @@ const resultaatEl = document.querySelector("#resultaat");
 const scoreEl = document.querySelector("#score");
 const namePlayerBtn = document.querySelector("#playerNameButton")
 const namePlayer = document.querySelector("#playerName")
+const cardPlayerName = document.querySelector(".card")
+
 
 // Functie die wordt aangeroepen bij het klikken op de card
 
@@ -239,11 +241,23 @@ document.querySelector("#power-up").addEventListener("click", usePowerUp);
 namePlayerBtn.addEventListener('click', function promptUser() {
     const namePlayerBtn = prompt('Kies je gebruikersnaam of verander het');
     if (namePlayerBtn) {
+        namePlayer.textContent = "Welkom bij autokennis, " + namePlayerBtn + "!";
+    } else {
+        namePlayer.textContent = "Welkom bij autokennis, Speler!";
+    }
+});
+
+cardPlayerName.addEventListener('click', function promptUser() {
+    const namePlayerBtn = prompt('Kies je gebruikersnaam of verander het');
+    if (namePlayerBtn) {
         namePlayer.textContent = "Welkom bij Auto Kennis, " + namePlayerBtn + "!";
     } else {
         namePlayer.textContent = "Welkom bij Auto Kennis, Speler!";
     }
+    console.log("dfsdrgsdr")
 });
+
+
 
 function toonVraag() {
     console.log("Huidige vraag:", huidigeVraag);
@@ -264,7 +278,7 @@ function toonVraag() {
     vraagData.opties.forEach((optie, index) => {
         const knop = document.createElement("button");
         knop.textContent = optie;
-        knop.onclick = () => controleerAntwoord(index);
+        knop.addEventListener("click", () => controleerAntwoord(index));
         optiesEl.appendChild(knop);
     });
 
@@ -318,5 +332,6 @@ function random(min, max) {
 
 function eindeQuiz() {
     quizEl.style.display = "none"; //Verbergt de quiz 
+    resultaatEl.style.display = "block"
     scoreEl.textContent = `${score} / ${vragen[huidigeCategorie].length}`; //Laat je eindscore zien met een calculatie: X / Aantal vragen!
 }
