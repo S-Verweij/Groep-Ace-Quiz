@@ -84,6 +84,7 @@ const resultaatEl = document.querySelector("#resultaat");
 const scoreEl = document.querySelector("#score");
 const namePlayerBtn = document.querySelector("#playerNameButton")
 const namePlayer = document.querySelector("#playerName")
+const cardPlayerName = document.querySelector(".card")
 
 // Functie die wordt aangeroepen bij het klikken op de card
 
@@ -161,11 +162,22 @@ document.querySelector("#power-up").addEventListener("click", usePowerUp);
 namePlayerBtn.addEventListener('click', function promptUser() {
     const namePlayerBtn = prompt('Kies je gebruikersnaam of verander het');
     if (namePlayerBtn) {
-        namePlayer.textContent = "Welkom bij Auto Kennis, " + namePlayerBtn + "!";
+        namePlayer.textContent = "Welkom bij geschiedenis, " + namePlayerBtn + "!";
     } else {
-        namePlayer.textContent = "Welkom bij Auto Kennis, Speler!";
+        namePlayer.textContent = "Welkom bij geschiedenis, Speler!";
     }
 });
+
+cardPlayerName.addEventListener('click', function promptUser() {
+    const namePlayerBtn = prompt('Kies je gebruikersnaam of verander het');
+    if (namePlayerBtn) {
+        namePlayer.textContent = "Welkom bij geschiedenis, " + namePlayerBtn + "!";
+    } else {
+        namePlayer.textContent = "Welkom bij geschiedenis, Speler!";
+    }
+    console.log("dfsdrgsdr")
+});
+
 
 function toonVraag() {
     console.log("Huidige vraag:", huidigeVraag);
@@ -240,5 +252,6 @@ function random(min, max) {
 
 function eindeQuiz() {
     quizEl.style.display = "none"; //Verbergt de quiz 
+    resultaatEl.style.display = "block"
     scoreEl.textContent = `${score} / ${vragen[huidigeCategorie].length}`; //Laat je eindscore zien met een calculatie: X / Aantal vragen!
 }
