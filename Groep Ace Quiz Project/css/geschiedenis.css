@@ -33,6 +33,7 @@ header {
     align-items: center;
     min-height: calc(100vh - 80px);
     /* schermhoogte - headerhoogte */
+    opacity: 80%;
 }
 
 .startCard {
@@ -53,12 +54,12 @@ header {
 
 .card {
     display: block;
-    width: 650px;
+    width: 80%;
     height: 500px;
     background-color: rgb(170, 80, 255);
     background-image: linear-gradient(to bottom, #9a734b, #5e414d, #80777B);
     margin-bottom: 200px;
-    margin-left: 450px;
+    margin-left: 109%;
     padding: 20px;
     border: 5px solid black;
     border-radius: 10px;
@@ -91,9 +92,10 @@ a {
 
 .image-quiz {
     margin-top: 50px;
-    margin-left: 130px;
+    margin-left: 40px;
+    margin-right: 40px;
     border-radius: 10px;
-    border: 5px solid black;
+    border: 5px solid black; 
 }
 
 .author {
@@ -251,7 +253,7 @@ footer {
     padding: 20px;
     grid-area: res;
     background: red;
-    background-image: linear-gradient(rgb(250, 44, 44), rgb(247, 247, 39));
+    background-image: linear-gradient(to bottom, #9a734b, #5e414d, #80777B);
     border: 5px solid black;
     border-radius: 10px;
     text-align: center;
@@ -264,7 +266,7 @@ footer {
     padding: 20px;
     grid-area: rv;
     background: red;
-    background-image: linear-gradient(rgb(250, 44, 44), rgb(247, 247, 39));
+    background-image: linear-gradient(to bottom, #9a734b, #5e414d, #80777B);
     border: 5px solid black;
     border-radius: 10px;
     text-align: center;
@@ -275,7 +277,7 @@ footer {
     margin: 50px auto;
     padding: 20px;
     background: red;
-    background-image: linear-gradient(rgb(250, 44, 44), rgb(247, 247, 39));
+    background-image: linear-gradient(to bottom, #9a734b, #5e414d, #80777B);
     border: 5px solid black;
     border-radius: 10px;
     text-align: center;

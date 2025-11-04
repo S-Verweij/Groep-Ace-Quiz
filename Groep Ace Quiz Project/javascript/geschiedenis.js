@@ -198,7 +198,7 @@ function toonVraag() {
     vraagData.opties.forEach((optie, index) => {
         const knop = document.createElement("button");
         knop.textContent = optie;
-        knop.onclick = () => controleerAntwoord(index);
+        knop.addEventListener("click", ()=> controleerAntwoord(index));
         optiesEl.appendChild(knop);
     });
 
