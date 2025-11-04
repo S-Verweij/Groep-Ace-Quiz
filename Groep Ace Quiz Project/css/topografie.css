@@ -7,7 +7,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     height: 100%;
     margin: 0;
-    background-image: url('/Groep\ Ace\ Quiz\ Project/video/autobg.gif');
+    background-image: url('/Groep\ Ace\ Quiz\ Project/video/W-bg-pt2.gif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -16,13 +16,15 @@ body {
 
 header {
     background-color: rgb(170, 80, 255);
-    background-image: linear-gradient(to bottom, rgb(170, 80, 255), rgb(250, 44, 44));
+    background-image: linear-gradient(to bottom, #353535, #b8b8b8,  #d3a259);
     border-bottom: 5px solid black;
     padding: 1px;
     text-align: center;
     font-size: 35px;
     color: white;
     margin-bottom: 30px;
+    opacity: 80%;
+    text-shadow: -5px -5px 0 #000, 1px -5px 0 #000, -5px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .cards-container {
@@ -31,6 +33,7 @@ header {
     align-items: center;
     min-height: calc(100vh - 80px);
     /* schermhoogte - headerhoogte */
+    opacity: 80%;
 }
 
 .startCard {
@@ -51,14 +54,14 @@ header {
 
 .card {
     display: block;
-    width: 800px;
-    height: 800px;
+    width: 80%;
+    height: 500px;
     background-color: rgb(170, 80, 255);
-    background-image: linear-gradient(to bottom, rgb(170, 80, 255), rgb(250, 44, 44), rgb(247, 247, 39));
-    margin-bottom: 40px;
-    margin-left: 850px;
+    background-image: linear-gradient(to bottom, #353535, #b8b8b8,  #d3a259);
+    margin-bottom: 200px;
+    margin-left: 109%;
     padding: 20px;
-    border: 3px solid black;
+    border: 5px solid black;
     border-radius: 10px;
     text-decoration: none;
     color: black;
@@ -89,9 +92,10 @@ a {
 
 .image-quiz {
     margin-top: 50px;
-    margin-left: 130px;
+    margin-left: 40px;
+    margin-right: 40px;
     border-radius: 10px;
-    border: 3px solid black;
+    border: 5px solid black; 
 }
 
 .author {
@@ -123,7 +127,7 @@ a {
     /* vaste breedte */
     background-color: skyblue;
     color: black;
-    border: solid 4px black;
+    border: solid 2px black;
     border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
@@ -159,7 +163,7 @@ footer {
     /* vaste breedte */
     background-color: skyblue;
     color: black;
-    border: solid 4px black;
+    border: solid 2px black;
     border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
@@ -187,11 +191,12 @@ footer {
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
-    background: white;
-    border: 3px solid black;
+    background-image: linear-gradient(to bottom, #353535, #b8b8b8,  #d3a259);
+    border: 5px solid black;
     border-radius: 10px;
     text-align: center;
     grid-area: qz;
+    opacity: 80%;
 }
 
 /* Vraagtekst */
@@ -212,13 +217,15 @@ footer {
     font-size: 16px;
     border: 2px solid black;
     border-radius: 6px;
-    background-color: lightblue;
+    background-color: #11caeb;
+    color: #d4c2cb;
     cursor: pointer;
     transition: background-color 0.2s, transform 0.2s;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 #opties button:hover {
-    background-color: deepskyblue;
+    background-color: #462944;
     transform: scale(1.03);
 }
 
@@ -229,7 +236,7 @@ footer {
     font-size: 18px;
     border: 2px solid black;
     border-radius: 6px;
-    background-color: #007bff;
+    background-color: #797075;
     color: white;
     cursor: pointer;
 }
@@ -246,8 +253,8 @@ footer {
     padding: 20px;
     grid-area: res;
     background: red;
-    background-image: linear-gradient(rgb(250, 44, 44), rgb(247, 247, 39));
-    border: 3px solid black;
+    background-image: linear-gradient(to bottom, #353535, #b8b8b8,  #d3a259);
+    border: 5px solid black;
     border-radius: 10px;
     text-align: center;
 }
@@ -259,8 +266,8 @@ footer {
     padding: 20px;
     grid-area: rv;
     background: red;
-    background-image: linear-gradient(rgb(250, 44, 44), rgb(247, 247, 39));
-    border: 3px solid black;
+    background-image: linear-gradient(to bottom, #353535, #b8b8b8,  #d3a259);
+    border: 5px solid black;
     border-radius: 10px;
     text-align: center;
 }
@@ -270,8 +277,8 @@ footer {
     margin: 50px auto;
     padding: 20px;
     background: red;
-    background-image: linear-gradient(rgb(250, 44, 44), rgb(247, 247, 39));
-    border: 3px solid black;
+    background-image: linear-gradient(to bottom, #353535, #b8b8b8,  #d3a259);
+    border: 5px solid black;
     border-radius: 10px;
     text-align: center;
 }
@@ -291,4 +298,8 @@ footer {
 #reset-button:hover {
     background-color: deepskyblue;
     transform: scale(1.03);
+}
+
+.resultaatEL-block{
+    display: block;
 }
