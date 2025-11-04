@@ -1,25 +1,49 @@
+console.log("autoKennis Connected")
+
 //----------------------- \\
-// --Muziek Knop en Data-- \\
+// --Reset Knop en Data-- \\
 //------------------------ \\
-const music = document.getElementById('bg-music');
-const toggleBtn = document.getElementById('toggle-music');
+const resetBtn = document.querySelector('#reset-button');
+const playerName = document.querySelector('#playerName');
 
-music.volume = 0.2; // zachter volume
 
-toggleBtn.addEventListener('click', () => {
-  if (!music.paused) {
-    music.pause();
-    toggleBtn.innerHTML = '<img class="sound-icon" src="img/sound-icon-muted.png" alt="muziek aan/uit"> Speel muziek';
-  } else {
-    music.play();
-    toggleBtn.innerHTML = '<img class="sound-icon" src="img/sound-icon.png" alt="muziek aan/uit"> Stop muziek';
-  }
-});
+//------------------------- \\
+// -------Randomizer------- \\
+//------------------------- \\
+
+let indexArray = [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+];
+
+
+
+
+
 //------------------------- \\
 // --Quiz Data en Vragen!-- \\
 //------------------------- \\
 const vragen = {
- topografie: [
+    topografie: [
+    { vraag: "Welk land grenst aan zowel Spanje als Frankrijk?", opties: ["Andorra", "Portugal", "Italië", "België"], antwoord: 0 },
     { vraag: "Welke rivier stroomt door Parijs?", opties: ["Donau", "Thames", "Seine", "Nijl"], antwoord: 2 },
     { vraag: "Wat is de hoofdstad van Canada?", opties: ["Toronto", "Ottawa", "Vacouver", "Montreal"], antwoord: 1 },
     { vraag: "In welk land ligt de stad Tottori?", opties: ["China", "Zuid-Korea", "Japan", "Noord-Korea"], antwoord: 2 },
@@ -39,12 +63,10 @@ const vragen = {
     { vraag: "Welke zee ligt tussen Saudi-Arabië en Afrika?", opties: ["Arabishe Zee", "Middellandse Zee", "Zwarte Zee", "Rode Zee"], antwoord: 3 },
     { vraag: "Wat is de hoofdstad van Mexico?", opties: ["Guadalajara", "Cancún", "Mecico-Stad", "Monterrey"], antwoord: 2 },
     { vraag: "Welke bergketen loopt langs de westkust van Zuid-Amerika?", opties: ["Andes", "Rocky Mountains", "Himalaya", "Alpen"], antwoord: 0 },
-    
-  ]
-};
-    // Hier gaan jullie je vragen in zetten!
 
-;
+  ]
+}
+
 //---------------- \\
 // --Quiz logica-- \\
 //---------------- \\
@@ -54,72 +76,169 @@ let huidigeVraag = 0;
 let score = 0;
 
 // Dit koppelt variabelen in JS aan elementen in je HTML zodat we de tekst en knoppen kunnen aanpassen als we dat willen!.
-const quizEl = document.getElementById("quiz"); 
-const vraagEl = document.getElementById("vraag");
-const optiesEl = document.getElementById("opties");
-const volgendeBtn = document.getElementById("volgende");
-const resultaatEl = document.getElementById("resultaat");
-const scoreEl = document.getElementById("score");
+const quizEl = document.querySelector("#quiz");
+const vraagEl = document.querySelector("#vraag");
+const optiesEl = document.querySelector("#opties");
+const volgendeBtn = document.querySelector("#volgende");
+const resultaatEl = document.querySelector("#resultaat");
+const scoreEl = document.querySelector("#score");
+const namePlayerBtn = document.querySelector("#playerNameButton")
+const namePlayer = document.querySelector("#playerName")
+
+// Functie die wordt aangeroepen bij het klikken op de card
 
 function startQuiz(categorie) {
-  huidigeCategorie = categorie; // sla de gekozen categorie op
-  huidigeVraag = 0; //Begint bij de eerste vraag
-  score = 0; //Zet de score op 0 en reset het ook weer naar 0
+    huidigeCategorie = categorie;
 
-  // Hier verbergt die de startscherm en laat die de vragen zien, of de Quiz
-  document.querySelector(".cards-container").style.display = "none";
-  quizEl.style.display = "block";
+    huidigeVraag = random(0, indexArray.length);
+    const index = indexArray.indexOf(huidigeVraag);
+    indexArray.splice(index, 1);
+    score = 0;
 
-  toonVraag(); //Door dit laad de eerste vraag waardoor de speler kan beginnen aan onze quiz
+    document.querySelector(".cards-container").style.display = "none";
+    quizEl.style.display = "block";
+
+    toonVraag();
+
+    document.querySelector("#power-up").style.display = "block";
+};
+
+
+
+
+
+//50/50 power up button
+
+// Check of power-up al gebruikt is
+
+let powerUpUsed = false;
+
+
+function usePowerUp() {
+    {
+        // Stop als power-up al gebruikt is
+        if (powerUpUsed) return;
+
+        // Markeer power-up als gebruikt
+        powerUpUsed = true;
+
+        // Maak knop grijs en niet klikbaar
+        const powerButton = document.querySelector("#power-up");
+        powerButton.disabled = true;
+        powerButton.style.backgroundColor = "grey";
+
+        // Vraag de correcte antwoord op
+        const vraagData = vragen[huidigeCategorie][huidigeVraag];
+        const correctAnswer = vraagData.antwoord;
+
+        // Toon de eerste fout antwoord
+        let firstWrong = Math.floor(Math.random() * 4);
+        while (firstWrong === correctAnswer) {
+            firstWrong = Math.floor(Math.random() * 4);
+        }
+
+        // Toon de tweede fout antwoord
+        let secondWrong = Math.floor(Math.random() * 4);
+        while (secondWrong === correctAnswer || secondWrong === firstWrong) {
+            secondWrong = Math.floor(Math.random() * 4);
+        }
+
+        // Maak de foutieve antwoorden rood
+        const buttons = document.querySelectorAll("#opties button");
+        buttons[firstWrong].style.backgroundColor = "salmon";
+        buttons[secondWrong].style.backgroundColor = "salmon";
+    }
+
 }
 
+// Klik event voor 50/50 knop
+document.querySelector("#power-up").addEventListener("click", usePowerUp);
+
+
+
+//Speler Naam button \\
+
+namePlayerBtn.addEventListener('click', function promptUser() {
+    const namePlayerBtn = prompt('Kies je gebruikersnaam of verander het');
+    if (namePlayerBtn) {
+        namePlayer.textContent = "Welkom bij Auto Kennis, " + namePlayerBtn + "!";
+    } else {
+        namePlayer.textContent = "Welkom bij Auto Kennis, Speler!";
+    }
+});
+
 function toonVraag() {
-  const vraagData = vragen[huidigeCategorie][huidigeVraag]; //Haalt onze vraag terug door eerst de categorie te checken, en dan welke vraag
-  vraagEl.textContent = vraagData.vraag; //Hier wordt de vraag in een h2tje gezet
+    console.log("Huidige vraag:", huidigeVraag);
 
-  optiesEl.innerHTML = ""; // Maakt het leeg zodat de vorige antwoorden verdwijnen
+    const vraagData = vragen[huidigeCategorie] && vragen[huidigeCategorie][huidigeVraag];
 
-  vraagData.opties.forEach((optie, index) => { //------| Dit zorgt ervoor dat voor elk antwoord een knop wordt gemaakt
-    const knop = document.createElement("button");//---| De Knop
-    knop.textContent = optie;                     //---| De tekst
-    knop.onclick = () => controleerAntwoord(index);//--| Welk nummer dit antwoord heeft: 0, 1, 2 of 3. Javascript begint altijd met 0, niet 1. Let daar op!
-    optiesEl.appendChild(knop); //---------------------| Dus, als je op de knop drukt, voort ie een controle uit
-  });
+    if (!vraagData) {
+        console.error("Geen vraag gevonden!");
+        return;
+    }
 
-  volgendeBtn.style.display = "none"; // De 'Volgende' knop is pas zichtbaar nadat je een antwoord kiest.
+    console.log(vraagData);
+    console.log(vraagEl);
+
+    vraagEl.textContent = vraagData.vraag;
+    optiesEl.innerHTML = "";
+
+    vraagData.opties.forEach((optie, index) => {
+        const knop = document.createElement("button");
+        knop.textContent = optie;
+        knop.onclick = () => controleerAntwoord(index);
+        optiesEl.appendChild(knop);
+    });
+
+    // Verberg de 'Volgende' knop totdat een antwoord is geselecteerd
+    volgendeBtn.style.display = "none";
 }
 
 //Hier vergelijkt ie jouw keuze met het juiste antwoord. Als het klopt gaat de score omhoog met 1
 function controleerAntwoord(keuze) {
-  const vraagData = vragen[huidigeCategorie][huidigeVraag];
-  if (keuze === vraagData.antwoord) {
-    score++;
-  }
-
-  // Disabled knoppen na de keuze
-  Array.from(optiesEl.children).forEach((btn, i) => {
-    btn.disabled = true;
-    if (i === vraagData.antwoord) { //Maakt de correcte keuze groen en het foute rood
-      btn.style.backgroundColor = "lightgreen";
-    } else if (i === keuze) {
-      btn.style.backgroundColor = "salmon";
+    const vraagData = vragen[huidigeCategorie][huidigeVraag];
+    if (keuze === vraagData.antwoord) {
+        score++;
     }
-  });
 
-  volgendeBtn.style.display = "inline-block"; //Dit zorgt ervoor dat je de 'Volgende' knop te zien krijgt zodat je verder kan
+    // Disabled knoppen na de keuze
+    Array.from(optiesEl.children).forEach((btn, i) => {
+        btn.disabled = true;
+        if (i === vraagData.antwoord) { //Maakt de correcte keuze groen en het foute rood
+            btn.style.backgroundColor = "lightgreen";
+        } else if (i === keuze) {
+            btn.style.backgroundColor = "salmon";
+        }
+    });
+
+    volgendeBtn.style.display = "inline-block"; //Dit zorgt ervoor dat je de 'Volgende' knop te zien krijgt zodat je verder kan
 }
 
 function volgendeVraag() {
-  huidigeVraag++;
-  if (huidigeVraag < vragen[huidigeCategorie].length) { //Als er nog vragen zijn, ga naar het volgende vraag
-    toonVraag();
-  } else { //Zo niet? Dan ga je naar het eindscherm!
-    eindeQuiz();
-  }
+    huidigeVraag++;
+    if (huidigeVraag < vragen[huidigeCategorie].length) { //Als er nog vragen zijn, ga naar het volgende vraag
+        toonVraag();
+    } else { //Zo niet? Dan ga je naar het eindscherm!
+        eindeQuiz();
+    }
+}
+function volgendeVraag() {
+    if (indexArray.length > 0) {
+        const randomIndex = random(0, indexArray.length); // Kies random positie in indexArray
+        huidigeVraag = indexArray[randomIndex];           // Pak de echte vraag index
+        indexArray.splice(randomIndex, 1);                // Verwijder deze index uit indexArray
+        toonVraag();
+    } else {
+        eindeQuiz();
+    }
+};
+
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min) + min)
+
 }
 
 function eindeQuiz() {
-  quizEl.style.display = "none"; //Verbergt de quiz 
-  resultaatEl.style.display = "block"; //Laat het eind resultaat zien
-  scoreEl.textContent = `${score} / ${vragen[huidigeCategorie].length}`; //Laat je eindscore zien met een calculatie: X / Aantal vragen!
+    quizEl.style.display = "none"; //Verbergt de quiz 
+    scoreEl.textContent = `${score} / ${vragen[huidigeCategorie].length}`; //Laat je eindscore zien met een calculatie: X / Aantal vragen!
 }

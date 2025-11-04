@@ -42,107 +42,29 @@ let indexArray = [
 // --Quiz Data en Vragen!-- \\
 //------------------------- \\
 const vragen = {
-    autoKennis: [
-        {
-            vraag: "Er waren meerdere pioniers in de autogeschiedenis, maar wie maakte de auto écht beschikbaar voor de massa?",
-            opties: ["Karl Benz", "Gottlieb Daimler", "Nicolas-Joseph Cugnot", "Henry Ford"],
-            antwoord: 3
-        },
-        {
-            vraag: "Welke auto wordt vaak gezien als de eerste seriematig geproduceerde elektrische auto?",
-            opties: ["GM EV1", "Nissan Leaf", "Tesla Roadster", "BMW i3"],
-            antwoord: 0
-        },
-        {
-            vraag: "Wat was de topsnelheid van de Benz Patent-Motorwagen uit 1885?", opties:
-                ["8 km/u", "16 km/u", "25 km/u", "40 km/u"], antwoord: 1
-        },
-        {
-            vraag: "Welke autofabrikant introduceerde als eerste de veiligheidsriem in driepuntsconfiguratie (zoals we die nu kennen)?",
-            opties: ["Volvo", "Mercedes-Benz", "Ford", "Citroën"],
-            antwoord: 0
-        },
-        {
-            vraag: "Welke motorconfiguratie wordt ook wel een “boxermotor” genoemd?",
-            opties: ["V-Motor", "Lijnmotor", "Horizontaal tegenoverliggende cilinders", "Wankelmotor"],
-            antwoord: 2
-        },
-        {
-            vraag: "In welk jaar werd de eerste snelheidslimiet voor auto’s ingevoerd in Groot-Brittannië?",
-            opties: ["1830", "1865", "1899", "1910"],
-            antwoord: 1
-        },
-        {
-            vraag: "Wat is de belangrijkste reden dat lood vroeger werd toegevoegd aan benzine?",
-            opties: ["Goedkoper produceren", "Betere verbranding", "Vermindering van motorklop", "Minder CO2-uitstoot"],
-            antwoord: 2
-        },
-        {
-            vraag: "Welke fabrikant produceerde de iconische 'Quattro', die baanbrekend was voor vierwielaandrijving in rallysport?",
-            opties: ["Audi", "Lancia", "Subaru", "Peugeot"],
-            antwoord: 0
-        },
-        {
-            vraag: "De term “ABS” staat voor:",
-            opties: ["Automatic Braking System", "Auto Balance Safety", "Air Bag System", "Anti-Blockier-System"],
-            antwoord: 3
-        },
-        {
-            vraag: "Wat was de eerste auto die door Euro NCAP vijf sterren kreeg voor veiligheid?",
-            opties: ["Mercedes A-Klasse", "Renault Laguna", "Volvo S80", "Opel Astra"],
-            antwoord: 1
-        },
-        {
-            vraag: "Wie wordt gezien als de uitvinder van de Wankelmotor?",
-            opties: ["Karl Wankel", "Hans Wankel", "Walter Wankel", "Felix Wankel"],
-            antwoord: 3
-        },
-        {
-            vraag: "Welke fabrikant introduceerde in 1954 de eerste productieauto met brandstofinjectie?",
-            opties: ["Porsche", "Mercedes-Benz", "Chevrolet", "BMW"],
-            antwoord: 1
-        },
-        {
-            vraag: "De Bugatti Veyron brak snelheidsrecords. Welke motor lag erin?",
-            opties: ["V10", "W12", "W16", "V18"],
-            antwoord: 2
-        },
-        {
-            vraag: "Wat was de allereerste \"auto\" die op de maan reed (Lunar Roving Vehicle, 1971)?",
-            opties: ["General Motors", "Ford", "NASA zelf", "Chrysler"],
-            antwoord: 0
-        },
-        {
-            vraag: "Welke van deze automerken is oorspronkelijk Japans?",
-            opties: ["Hyundai", "Mitsubishi", "Kia", "Geely"],
-            antwoord: 1
-        },
-        {
-            vraag: "Welke band werd in 1946 voor het eerst geïntroduceerd door Michelin en betekende een revolutie in de auto-industrie?",
-            opties: ["Winterband", "Radiaalband", "Runflatband", "Slickband"],
-            antwoord: 1
-        },
-        {
-            vraag: "Welke Sovjet-auto werd wereldwijd bekend als goedkope export naar Europa tijdens de Koude Oorlog?",
-            opties: ["Trabant", "Moskvitch", "Lada", "Wartburg"],
-            antwoord: 2
-        },
-        {
-            vraag: "De term “coupé” verwijst oorspronkelijk naar:",
-            opties: ["Een sportieve motor", "De aflopende daklijn", "Een lichte carrosserie", "De aanwezigheid van twee deuren"],
-            antwoord: 3
-        },
-        {
-            vraag: "Welke Japanse auto wordt vaak “de eerste serieuze hybride” genoemd?",
-            opties: ["Nissan Micra", "Toyota Prius", "Honda Insight", "Mazda RX-8"],
-            antwoord: 1
-        },
-        {
-            vraag: "Wat was de eerste auto die officieel de 100 km/u doorbrak (1899)?",
-            opties: ["La Jamais Contente", "Mercedes Simplex", "Panhard et Levassor", "Peugeot Type 3"],
-            antwoord: 0
-        },
-    ]
+    zoology: [
+    { vraag: "Hoeveel keren per dag kruisen leeuwen?", opties: ["65", "50", "15", "25"], antwoord: 1 },
+    { vraag: "Wie is de snelste land dier?", opties: ["cheetah", "greyhound", "eagle", "impala"], antwoord: 0 },
+    { vraag: "Welke dier heeft de sterkste biteforce?", opties: ["leopard", "Gorilla", "Tijger", "crodile"], antwoord: 3 },
+    { vraag: "Welke vogel wordt het snelst op het water?", opties: ["Pinguin", "Eagle", "Vulture", "Seagulls"], antwoord: 0 },
+    { vraag: "Welke is de grooste cat van de cat family?", opties: ["leeuw", "jaugar", "Tijger", "Puma"], antwoord: 2 },
+    { vraag: "Hoeveel magen heeft een koe?", opties: ["4", "6", "8", "10"], antwoord: 0 },
+    { vraag: "Welke slang is het giftigst?", opties: ["Cobra", "Black mamba", "lowland copperhead", "inland taipan"], antwoord: 3 },
+    { vraag: "Welke aap is de most related tot ons mensen?", opties: ["Orangutan", "Chimpanzee", "Baboon", "Gorilla"], antwoord: 1 },
+    { vraag: "Hoe cummuniceren dolfijen onder water met elkaar?", opties: ["Signalen", "complexe combinaties", "telepathie", "Geluiden"], antwoord: 1 },
+    { vraag: "Welke zoogdieren leggen eieren?", opties: ["Vogelbeldieren", "Reptiles", "Amphians", "Katten"], antwoord: 0 },
+    { vraag: "Hoveel poten heeft een spin?", opties: ["10", "15", "12", "8"], antwoord: 3 },
+    { vraag: "Welke zee  is de thuisbasis van de meeste haaien?", opties: ["Indische zee", "Atlandtische oceaan", "Grote Oceaan", "Pacific Oceaan",], antwoord: 2 },
+    { vraag: "Welke land dier kan het langst zonder water?", opties: ["Kameel", "Woestijnrat", "Beerdiertjes", "Addax",], antwoord: 2 },
+    { vraag: "Welke dieren zijn bekend om hun vermogen om te veranderen van kleur?", opties: ["Gifitge kikkers", "lizards", "zeeleeuwen", "Kameleons"], antwoord: 3 },
+    { vraag: "Wat eten panda's voornamelijk?", opties: ["Insecten", "Bamboo", "Fruit", "Noten"], antwoord: 1 },
+    { vraag: "Hoe noemen we een jongen kangoeroe?", opties: ["Joey", "Cub", "Welf", "Boey"], antwoord: 0 },
+    { vraag: "Hoeveel tanden heeft een volwassen haai ongeveer?", opties: ["300", "250", "65", "125"], antwoord: 0 },
+    { vraag: "Wat is de IQ van een octupus?", opties: ["165", "70", "100", "225"], antwoord: 2 },
+    { vraag: "Welke beer soort is de sterkst?", opties: ["Brownbeer", "Polarbeer", "Blackbeer", "Slothbeer"], antwoord: 1 },
+    { vraag: "Wat is de grooste roofdier op land?", opties: ["Leeuw", "Tijger", "Olifant", "Polarbeer"], antwoord: 3 }, //We hebben 4 keuzes, dus 0, 1, 2, 3. Javascript code begint altijd met 0, niet met 1. Dus als het de vierde optie is, dan wordt het 3, niet 4.
+    // Hier gaan jullie je vragen in zetten!
+  ]
 }
 
 //---------------- \\
