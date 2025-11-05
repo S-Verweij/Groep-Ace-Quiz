@@ -4,22 +4,33 @@
     font-family: 'poppins', sans-serif;
     box-sizing: border-box;
 }
-
-body {
+body{
     background:
-        linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-        url('/Groep\ Ace\ Quiz\ Project/img/JaguarWF.jpg') no-repeat right center fixed;
+    linear-gradient(rgba(0, 0, 0, 0.25), rgba(0,0,0, 0.25)),
+    url("../img/JaguarWF.jpg") no-repeat right center fixed;
     background-size: cover;
     font-family: 'poppins', sans-serif;
-    display: flex;
     justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
     padding-bottom: 80px;
-
 }
 
-.app {
+header {
+    background-color: rgb(170, 80, 255);
+    background-image: linear-gradient(to bottom, #063701, #1c6101);
+    border-bottom: 5px solid black;
+    padding: 1px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+    margin-bottom: 30px;
+    opacity: 80%;
+    text-shadow: -5px -5px 0 #000, 1px -5px 0 #000, -5px 1px 0 #000, 1px 1px 0 #000;
+}
+
+ 
+.app{
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(6px);
     width: 90%;
@@ -29,59 +40,73 @@ body {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .app:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 45px rgba(0, 0, 0, 0.5);
 }
-
-
-.app h1 {
-    font-size: 28px;
-    color: #3b2f2f;
-    /* dark earthy brown */
-    font-weight: 700;
-    border-bottom: 2px solid #a37a2c;
-    /* golden accent */
-    padding-bottom: 15px;
-    margin-bottom: 25px;
-    letter-spacing: 1px;
+ 
+ 
+.app h1{
+     font-size: 28px;
+  color: #3b2f2f; /* dark earthy brown */
+  font-weight: 700;
+  border-bottom: 2px solid #a37a2c; /* golden accent */
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
 }
-
-.quiz {
+.quiz{
     padding: 20px 0;
 }
-
-.quiz h2 {
+ 
+.quiz h2{
     font-size: 18px;
-    color: #2f2b1f;
-    font-weight: 600;
-    margin-bottom: 15px;
+  color: #2f2b1f;
+  font-weight: 600;
+  margin-bottom: 15px;
 }
-
-.btn {
-    background: rgba(255, 255, 255, 0.95);
-    color: #1f1f1f;
-    font-weight: 500;
-    width: 100%;
-    border: 1px solid #cbb26a;
-    /* golden outline */
-    padding: 12px 15px;
-    margin: 8px 0;
-    text-align: left;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-
+.btn{
+   background: rgba(255, 255, 255, 0.95);
+  color: #1f1f1f;
+  font-weight: 500;
+  width: 100%;
+  border: 1px solid #cbb26a; /* golden outline */
+  padding: 12px 15px;
+  margin: 8px 0;
+  text-align: left;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+ 
 }
-
-.interactive-buttons {
-    position: fixed;
-    /* Blijft op dezelfde plek bij scrollen. Is fijner */
-    top: 20px;
-    left: 20px;
-    z-index: 1000;
-    /* zorgt dat de knop boven andere elementen ligt */
+ 
+.btn:hover:not([disabled]){
+    background: #a37a2c; /* gold tone */
+  color: #fff;
+  transform: scale(1.02);
+}
+.btn:disabled{
+    cursor: no-drop;
+    opacity: 0.7;
+}
+ 
+#next-btn{
+     background: #3b2f2f;
+  color: #fff;
+  font-weight: 600;
+  width: 150px;
+  border: none;
+  padding: 12px;
+  margin: 25px auto 0;
+  border-radius: 8px;
+  cursor: pointer;
+  display: none;
+  transition: all 0.3s ease;
+}
+#next-btn:hover {
+  background: #a37a2c;
+  color: #fff;
+  transform: scale(1.05);
 }
 
 .interactive-buttons button {
@@ -92,8 +117,8 @@ body {
     margin-bottom: 10px;
     width: 130px;
     /* vaste breedte */
-    background-color: skyblue;
-    color: black;
+    background-color: rgb(255, 255, 255);
+    color: rgb(12, 110, 3);
     border: solid 2px black;
     border-radius: 6px;
     cursor: pointer;
@@ -102,10 +127,29 @@ body {
 }
 
 .button-home {
-    color: black;
+    color: rgb(5, 92, 3);
     text-decoration: none;
 }
 
-.interactive-buttons button:hover {
-    background-color: #0056b3;
+.button-home:hover{
+    color: white;
 }
+
+.interactive-buttons button:hover {
+    background-color: #0a5605;
+    color: white;
+}
+
+
+ 
+ 
+ 
+.correct{
+    background: #a8e6a1 !important; /* soft green */
+  border-color: #357a38;
+}
+ 
+.incorrect{
+    background: salmon !important;
+}
+ 

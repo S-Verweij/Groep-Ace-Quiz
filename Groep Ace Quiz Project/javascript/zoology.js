@@ -1,3 +1,28 @@
+
+// Randomizer array
+let indexArray = [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+];
+
 const questions = [
     {
         vraag: "Hoveel keren per dag kruisen leeuwen?",
@@ -181,16 +206,14 @@ const questions = [
     ]
   },
 ];
- 
+
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
-const namePlayerBtn = document.querySelector("#playerNameButton")
-const playerName = document.querySelector('#playerName');
- 
+
 let currentQuestionIndex = 0;
 let score = 0;
- 
+
 function startQuiz(){
     currentQuestionIndex = 0;
     score = 0;
@@ -198,32 +221,18 @@ function startQuiz(){
     showQuestion();
 }
 
-namePlayerBtn.addEventListener('click', function promptUser() {
-    const namePlayerBtn = prompt('Kies je gebruikersnaam of verander het');
-    if (namePlayerBtn) {
-        namePlayer.textContent = "Welkom bij geschiedenis, " + namePlayerBtn + "!";
-    } else {
-        namePlayer.textContent = "Welkom bij geschiedenis, Speler!";
-    }
-});
-
-cardPlayerName.addEventListener('click', function promptUser() {
-    const namePlayerBtn = prompt('Kies je gebruikersnaam of verander het');
-    if (namePlayerBtn) {
-        namePlayer.textContent = "Welkom bij geschiedenis, " + namePlayerBtn + "!";
-    } else {
-        namePlayer.textContent = "Welkom bij geschiedenis, Speler!";
-    }
-    console.log("dfsdrgsdr")
-});
- 
 function showQuestion(){
     resetState();
-    let currentQuestion = questions[currentQuestionIndex];
+    // Kies willekeurige index uit indexArray
+const randomIndex = Math.floor(Math.random() * indexArray.length);
+const questionIndex = indexArray[randomIndex];
+let currentQuestion = questions[questionIndex];
+
+// Verwijder de gebruikte index, zodat die niet opnieuw komt
+indexArray.splice(randomIndex, 1);
     let questionNo = currentQuestionIndex + 1;
-    questionElement.innerHTML = questionNo + ". " + currentQuestion.
-    vraag;
- 
+    questionElement.innerHTML = questionNo + ". " + currentQuestion.vraag;
+
     currentQuestion.antwoord.forEach(answer => {
         const button = document.createElement("button");
         button.innerHTML = answer.text;
@@ -235,14 +244,14 @@ function showQuestion(){
         button.addEventListener("click", selectAnswer);
     });
 }
- 
-function resetState(e){
+
+function resetState(){
     nextButton.style.display = "none";
     while(answerButtons.firstChild){
         answerButtons.removeChild(answerButtons.firstChild)
     }
 }
- 
+
 function selectAnswer(e){
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct === "true";
@@ -254,22 +263,20 @@ function selectAnswer(e){
     }
     Array.from(answerButtons.children).forEach(button => {
         if(button.dataset.correc === "true"){
-            button.classList.add("correct");
+            button.claasList.add("correct");
         }
-        button.disabled= true
+        button.disabled = true;
     });
     nextButton.style.display = "block";
 }
+
 function showScore(){
     resetState();
-    questionElement.innerHTML = `You scored ${score} out of ${questions. lenght}!`;
+    questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
     nextButton.innerHTML = "Play Again";
-    nextButton.style.dislay = "block";
+    nextButton.style.display = "block";
 }
- 
- 
- 
- 
+
 function handleNextButton(){
     currentQuestionIndex++;
     if(currentQuestionIndex < questions.length){
@@ -278,18 +285,105 @@ function handleNextButton(){
         showScore();
     }
 }
- 
- 
- 
+
 nextButton.addEventListener("click", ()=>{
     if(currentQuestionIndex < questions.length){
         handleNextButton();
     }else{
         startQuiz();
     }
-})
- 
- 
- 
+});
+
 startQuiz();
- 
+
+//-----------------------------------\\
+//------ EXTRA FUNCTIES -------------\\
+//-----------------------------------\\
+
+const resetBtn = document.querySelector('#reset-button');
+const playerName = document.querySelector('#playerName');
+
+
+
+
+let huidigeCategorie = null;
+let huidigeVraag = 0;
+let geschiedenisScore = 0;
+
+const quizEl = document.querySelector("#quiz");
+const vraagEl = document.querySelector("#vraag");
+const optiesEl = document.querySelector("#opties");
+const volgendeBtn = document.querySelector("#volgende");
+const resultaatEl = document.querySelector("#resultaat");
+const scoreEl = document.querySelector("#score");
+const namePlayerBtn = document.querySelector("#playerNameButton");
+const namePlayerEl = document.querySelector("#playerName");
+const cardPlayerName = document.querySelector(".card");
+
+function startQuizCategorie(categorie) {
+    huidigeCategorie = categorie;
+    huidigeVraag = random(0, indexArray.length);
+    const index = indexArray.indexOf(huidigeVraag);
+    indexArray.splice(index, 1);
+    zoologyScore = 0;
+
+    document.querySelector(".cards-container").style.display = "none";
+    quizEl.style.display = "block";
+    document.querySelector("#power-up").style.display = "block";
+}
+
+//50/50 power up button
+
+// Check of power-up al gebruikt is
+
+let powerUpUsed = false;
+
+
+function usePowerUp() {
+    {
+        // Stop als power-up al gebruikt is
+        if (powerUpUsed) return;
+
+        // Markeer power-up als gebruikt
+        powerUpUsed = true;
+
+        // Maak knop grijs en niet klikbaar
+        const powerButton = document.querySelector("#power-up");
+        powerButton.disabled = true;
+        powerButton.style.backgroundColor = "grey";
+
+        // ✅ Vraag de correcte antwoord op
+        const vraagData = questions[huidigeVraag];
+        const correctAnswer = vraagData.antwoord.find(a => a.correct === true);
+
+        // Toon de eerste fout antwoord
+        let firstWrong = Math.floor(Math.random() * 4);
+        while (vraagData.antwoord[firstWrong] === correctAnswer) {
+            firstWrong = Math.floor(Math.random() * 4);
+        }
+
+        // Toon de tweede fout antwoord
+        let secondWrong = Math.floor(Math.random() * 4);
+        while (vraagData.antwoord[secondWrong] === correctAnswer || secondWrong === firstWrong) {
+            secondWrong = Math.floor(Math.random() * 4);
+        }
+
+        // Maak de foutieve antwoorden rood
+        const buttons = document.querySelectorAll("#answer-buttons button");
+        buttons[firstWrong].style.backgroundColor = "salmon";
+        buttons[secondWrong].style.backgroundColor = "salmon";
+    }
+}
+
+// Klik event voor 50/50 knop
+document.querySelector("#power-up").addEventListener("click", usePowerUp);
+
+// Naam invoeren
+namePlayerBtn.addEventListener('click', function promptUser() {
+    const name = prompt('Kies je gebruikersnaam of verander het');
+    namePlayerEl.textContent = name ? "Welkom bij geschiedenis, " + name + "!" : "Welkom bij geschiedenis, Speler!";
+});
+
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
