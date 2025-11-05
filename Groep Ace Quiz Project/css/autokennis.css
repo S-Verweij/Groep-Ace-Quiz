@@ -22,14 +22,13 @@ header {
     text-align: center;
     font-size: 35px;
     color: white;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .cards-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 80px);
     /* schermhoogte - headerhoogte */
 }
 
@@ -51,12 +50,11 @@ header {
 
 .card {
     display: block;
-    width: 800px;
-    height: 800px;
+    width: 500px;
+    height: 500px;
     background-color: rgb(170, 80, 255);
     background-image: linear-gradient(to bottom, rgb(170, 80, 255), rgb(250, 44, 44), rgb(247, 247, 39));
-    margin-bottom: 40px;
-    margin-left: 850px;
+    margin-right: 550px;
     padding: 20px;
     border: 3px solid black;
     border-radius: 10px;
