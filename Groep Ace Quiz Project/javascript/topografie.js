@@ -162,18 +162,18 @@ document.querySelector("#power-up").addEventListener("click", usePowerUp);
 namePlayerBtn.addEventListener('click', function promptUser() {
     const namePlayerBtn = prompt('Kies je gebruikersnaam of verander het');
     if (namePlayerBtn) {
-        namePlayer.textContent = "Welkom bij geschiedenis, " + namePlayerBtn + "!";
+        namePlayer.textContent = "Welkom bij Topografie, " + namePlayerBtn + "!";
     } else {
-        namePlayer.textContent = "Welkom bij geschiedenis, Speler!";
+        namePlayer.textContent = "Welkom bij Topografie, Speler!";
     }
 });
 
 cardPlayerName.addEventListener('click', function promptUser() {
     const namePlayerBtn = prompt('Kies je gebruikersnaam of verander het');
     if (namePlayerBtn) {
-        namePlayer.textContent = "Welkom bij geschiedenis, " + namePlayerBtn + "!";
+        namePlayer.textContent = "Welkom bij Topografie, " + namePlayerBtn + "!";
     } else {
-        namePlayer.textContent = "Welkom bij geschiedenis, Speler!";
+        namePlayer.textContent = "Welkom bij Topografie, Speler!";
     }
     console.log("dfsdrgsdr")
 });
