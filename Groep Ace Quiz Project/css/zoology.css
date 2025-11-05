@@ -1,106 +1,77 @@
 * {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
     box-sizing: border-box;
 }
 
-html,
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    height: 100%;
-    margin: 0;
-    background-image: url('/Groep\ Ace\ Quiz\ Project/video/autobg.gif');
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+        url('/Groep\ Ace\ Quiz\ Project/img/JaguarWF.jpg') no-repeat right center fixed;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-
-header {
-    background-color: rgb(170, 80, 255);
-    background-image: linear-gradient(to bottom, rgb(170, 80, 255), rgb(250, 44, 44));
-    border-bottom: 5px solid black;
-    padding: 1px;
-    text-align: center;
-    font-size: 35px;
-    color: white;
-    margin-bottom: 30px;
-}
-
-.cards-container {
+    font-family: 'poppins', sans-serif;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    min-height: calc(100vh - 80px);
-    /* schermhoogte - headerhoogte */
-}
-
-.startCard {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    justify-content: center;
-}
-
-.wrapperGame {
-    display: grid;
-    grid-template-columns: 1fr ;
-    grid-template-areas:
-    "qz "
-    "res";
+    min-height: 100vh;
+    padding-bottom: 80px;
 
 }
 
-.card {
-    display: block;
-    width: 800px;
-    height: 800px;
-    background-color: rgb(170, 80, 255);
-    background-image: linear-gradient(to bottom, rgb(170, 80, 255), rgb(250, 44, 44), rgb(247, 247, 39));
-    margin-bottom: 40px;
-    margin-left: 850px;
-    padding: 20px;
-    border: 3px solid black;
-    border-radius: 10px;
-    text-decoration: none;
-    color: black;
-    transition: transform 0.2s;
+.app {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    width: 90%;
+    max-width: 600px;
+    border-radius: 16px;
+    padding: 40px 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
-    /*Dit past aan hoe de card eruit ziet als je met je muis erover gaat*/
-    transform: scale(1.05);
+.app:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.5);
 }
 
-.card-titel {
-    margin: 5px;
-    text-align: center;
+
+.app h1 {
+    font-size: 28px;
+    color: #3b2f2f;
+    /* dark earthy brown */
+    font-weight: 700;
+    border-bottom: 2px solid #a37a2c;
+    /* golden accent */
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
 }
 
-a {
-    text-decoration: none;
-    color: black;
+.quiz {
+    padding: 20px 0;
 }
 
-.image-text {
-    text-decoration: underline;
-    font-weight: bold;
-    margin: 5px;
-    text-align: center;
+.quiz h2 {
+    font-size: 18px;
+    color: #2f2b1f;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
 
-.image-quiz {
-    margin-top: 50px;
-    margin-left: 130px;
-    border-radius: 10px;
-    border: 3px solid black;
-}
-
-.author {
-    background-color: lightblue;
-    border: 2px solid rgb(89, 175, 203);
-    border-radius: 10px;
-    padding: 5px;
-    margin: 5px;
-    text-align: center;
+.btn {
+    background: rgba(255, 255, 255, 0.95);
+    color: #1f1f1f;
+    font-weight: 500;
+    width: 100%;
+    border: 1px solid #cbb26a;
+    /* golden outline */
+    padding: 12px 15px;
+    margin: 8px 0;
+    text-align: left;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 
 }
 
@@ -123,7 +94,7 @@ a {
     /* vaste breedte */
     background-color: skyblue;
     color: black;
-    border: solid 4px black;
+    border: solid 2px black;
     border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
@@ -137,158 +108,4 @@ a {
 
 .interactive-buttons button:hover {
     background-color: #0056b3;
-}
-
-footer {
-    background-color: maroon;
-    border-top: 5px solid black;
-    border-bottom: 5px solid black;
-    padding: 10px;
-    text-align: center;
-    color: white;
-}
-
-/* 50/50 power-up knop*/
-#power-up {
-    display: flex;
-    text-align: center;
-    gap: 5px;
-    padding: 8px 12px;
-    margin-bottom: 10px;
-    width: 130px;
-    /* vaste breedte */
-    background-color: skyblue;
-    color: black;
-    border: solid 4px black;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 14px;
-    justify-content: center;
-    display: none;
-
-}
-
-#power-up:hover {
-    background-color: #0056b3;
-}
-
-#power-up-regel {
-    display: none;
-    text-align: center;
-}
-
-#power-up:hover #power-up-regel {
-    display: block;
-}
-
-/* Quiz container */
-#quiz {
-    display: none;
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background: white;
-    border: 3px solid black;
-    border-radius: 10px;
-    text-align: center;
-    grid-area: qz;
-}
-
-/* Vraagtekst */
-#quiz h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-/* Antwoordopties */
-#opties {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-#opties button {
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid black;
-    border-radius: 6px;
-    background-color: lightblue;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.2s;
-}
-
-#opties button:hover {
-    background-color: deepskyblue;
-    transform: scale(1.03);
-}
-
-/* Volgende-knop */
-#volgende {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 18px;
-    border: 2px solid black;
-    border-radius: 6px;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-}
-
-#volgende:hover {
-    background-color: #0056b3;
-}
-
-/* Eind Resultaat */
-#resultaat {
-    display: block;
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    grid-area: res;
-    background: red;
-    background-image: linear-gradient(rgb(250, 44, 44), rgb(247, 247, 39));
-    border: 3px solid black;
-    border-radius: 10px;
-    text-align: center;
-}
-
-#resultaatVraag {
-    display: block;
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    grid-area: rv;
-    background: red;
-    background-image: linear-gradient(rgb(250, 44, 44), rgb(247, 247, 39));
-    border: 3px solid black;
-    border-radius: 10px;
-    text-align: center;
-}
-#reset {
-    display: none;
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background: red;
-    background-image: linear-gradient(rgb(250, 44, 44), rgb(247, 247, 39));
-    border: 3px solid black;
-    border-radius: 10px;
-    text-align: center;
-}
-
-#resultaat-button,
-#reset-button {
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid black;
-    border-radius: 6px;
-    background-color: lightblue;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.2s;
-}
-
-#resultaat-button:hover,
-#reset-button:hover {
-    background-color: deepskyblue;
-    transform: scale(1.03);
 }

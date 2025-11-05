@@ -1,60 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ace Quiz: Zoology</title>
     <link rel="stylesheet" href="/Groep Ace Quiz Project/css/zoology.css">
+    <title>Document</title>
 </head>
-
 <body>
     <header>
         <h1 id="playerName"> </h1>
     </header>
-
     <aside class="interactive-buttons">
         <!-- Speler Naam Knop -->
         <button id="playerNameButton">
             Verander hier je naam!
         </button>
+        <button id="reset-button">
+                <a class="button-home" href="/Groep Ace Quiz Project/index.html">Terug naar start</a>
+            </button>
         <button id="power-up">
             50/50 Power Up
         </button>
     </aside>
-    <div class="startCard">
-        <main class="cards-container">
-            <div class="card" onclick="startQuiz ('zoology')">
-                <div class="card-titel">
-                    <h1>Klik op mij om te beginnen!</h1>
-                </div>
-                <img class="image-quiz" src="/Groep Ace Quiz Project/img/auto's-image.jpg" width="475" height="500"
-                    alt="auto-image" />
+    <div class="app">
+        <h1>Zoology</h1>
+        <div class="quiz">
+            <h2 id="question">Question goes here</h2>
+            <div id="answer-buttons">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
             </div>
-        </main>
-    </div>
-    <div class="wrapperGame">
-        <div id="resultaat" style="display: block">
-            <h2>Vraag: <span id="score"></span></h2>
-            <button id="resultaat-button" onclick="location.reload()">
-                Probeer Opnieuw
-            </button>
-            <!-- Reset Knop -->
-            <button id="reset-button">
-                <a class="button-home" href="/Groep Ace Quiz Project/index.html">Terug naar start</a>
-            </button>
         </div>
-        <!--Volgende Button-->
-        <div id="quiz" style="display: none">
-            <h2 id="vraag"></h2>
-            <div id="opties"></div>
-            <button id="volgende" onclick="volgendeVraag()">Volgende</button>
-        </div>
+        <button id="next-btn">Next</button>
     </div>
-
-
-
-    <script src="/Groep Ace Quiz Project/javascript/zoology.js"></script>
+    <script src="/Groep Ace Quiz Project/javascript/zoology.js"> </script>
 </body>
-
 </html>
